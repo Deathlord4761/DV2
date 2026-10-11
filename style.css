@@ -1,0 +1,221 @@
+/* ============================================================
+   Tokens: edit these to restyle the page
+   (light theme only, so charts always sit on a white surface)
+   ============================================================ */
+:root {
+  color-scheme: light;
+
+  --page: #f2f5f5;
+  --surface: #ffffff;
+  --text: #1b2a2e;
+  --muted: #4a5a5f;
+  --border: #d9e0e1;
+  --accent: #0f5c63;
+
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-head: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+  --max-width: 1240px;
+  --gap: 1.5rem;
+  --radius: 6px;
+  --chart-height: 320px;
+  --map-height: 360px;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--page);
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-head);
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1 { font-size: clamp(1.9rem, 4vw, 2.75rem); font-weight: 700; }
+h2 { font-size: 1.6rem; font-weight: 700; }
+h3 { font-size: 1.1rem; font-weight: 500; }
+
+p { margin: 0 0 0.9em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--accent); }
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* ============================================================
+   Header and navigation
+   ============================================================ */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 2.5rem 0 0;
+}
+
+.lede {
+  max-width: 62ch;
+  margin-top: 0.75rem;
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.section-nav a {
+  padding: 0.75rem 0;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+.section-nav a:hover,
+.section-nav a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ============================================================
+   The 3-column grid
+   .section is the grid. Children choose .span-1 / .span-2 / .span-3.
+   ============================================================ */
+.section {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+  align-items: start;
+  padding: 3rem 0 1rem;
+}
+
+.section + .section {
+  border-top: 1px solid var(--border);
+}
+
+.section > h2 {
+  padding-bottom: 0.25rem;
+}
+
+.span-1 { grid-column: span 1; }
+.span-2 { grid-column: span 2; }
+.span-3 { grid-column: 1 / -1; }
+
+/* Tablet: 2 columns. Wide items take the full row. */
+@media (max-width: 1000px) {
+  .section { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .span-2 { grid-column: 1 / -1; }
+}
+
+/* Phone: 1 column */
+@media (max-width: 640px) {
+  .section { grid-template-columns: minmax(0, 1fr); padding-top: 2rem; }
+  .span-1, .span-2, .span-3 { grid-column: 1 / -1; }
+}
+
+/* ============================================================
+   Text blocks
+   ============================================================ */
+.text h3 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.text.intro p {
+  max-width: 70ch;
+  color: var(--muted);
+}
+
+/* ============================================================
+   Chart cards
+   ============================================================ */
+.chart-card {
+  margin: 0;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  min-width: 0; /* lets charts shrink inside grid cells */
+}
+
+.chart-card figcaption { margin-bottom: 1rem; }
+
+.sub {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.note {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* The chart area. Shows a placeholder until Vega-Lite fills it. */
+.chart {
+  width: 100%;
+  min-height: var(--chart-height);
+}
+
+.chart.map { min-height: var(--map-height); }
+
+.chart:empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f9f9;
+  border: 1px dashed #b9c4c5;
+  border-radius: 4px;
+}
+
+.chart:empty::before {
+  content: attr(data-placeholder);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.chart .vega-embed { width: 100%; }
+
+/* ============================================================
+   About section and footer
+   ============================================================ */
+.about { padding-bottom: 3rem; }
+
+.site-footer {
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.9rem;
+  color: var(--muted);
+}

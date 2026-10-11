@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Household Expenditure in Australia</title>
+  <meta name="description" content="An interactive look at how Australian households spend their money.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER + SECTION NAV
+       ============================================================ -->
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Household expenditure in Australia</h1>
+      <p class="lede">One or two sentences that say what this page shows and why it matters.</p>
+      <nav class="section-nav" aria-label="Sections">
+        <a href="#overview">Overview</a>
+        <a href="#categories">Where the money goes</a>
+        <a href="#households">Who spends what</a>
+        <a href="#maps">Across Australia</a>
+        <a href="#housing">Housing costs</a>
+        <a href="#about">About the data</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!--
+      LAYOUT GUIDE
+      The page is a 3-column grid. Each block sets how many columns it takes:
+        .span-1  one column   (good for text, or a small chart/map)
+        .span-2  two columns  (good for a main chart)
+        .span-3  full width   (good for headings, wide charts, intro text)
+      Put a .span-1 text block next to a .span-2 chart to place them side by side.
+      On tablets the grid drops to 2 columns, on phones to 1.
+    -->
+
+    <!-- ============================================================
+         1. OVERVIEW  (text + 1 chart)
+         ============================================================ -->
+    <section id="overview" class="section">
+      <h2 class="span-3">Overview</h2>
+
+      <div class="text span-1">
+        <h3>Headline finding</h3>
+        <p>Write the main takeaway here. Keep each text block short so it sits comfortably beside a chart.</p>
+        <p>Add a second paragraph if you need to explain how to read the chart.</p>
+      </div>
+
+      <figure class="chart-card span-2">
+        <figcaption>
+          <h3>Chart 1: Average weekly household spending over time</h3>
+          <p class="sub">Subtitle: units, period and what is being measured.</p>
+        </figcaption>
+        <div id="chart-1" class="chart" data-placeholder="Chart 1: line chart"></div>
+        <p class="note">Source: add source here.</p>
+      </figure>
+    </section>
+
+    <!-- ============================================================
+         2. WHERE THE MONEY GOES  (2 charts + text)
+         ============================================================ -->
+    <section id="categories" class="section">
+      <h2 class="span-3">Where the money goes</h2>
+
+      <figure class="chart-card span-2">
+        <figcaption>
+          <h3>Chart 2: Spending by category</h3>
+          <p class="sub">Subtitle.</p>
+        </figcaption>
+        <div id="chart-2" class="chart" data-placeholder="Chart 2: bar chart"></div>
+        <p class="note">Source: add source here.</p>
+      </figure>
+
+      <div class="text span-1">
+        <h3>Reading the categories</h3>
+        <p>Explain what the largest and smallest categories tell us.</p>
+      </div>
+
+      <div class="text span-1">
+        <h3>How the mix has shifted</h3>
+        <p>Describe the change over time shown in the next chart.</p>
+      </div>
+
+      <figure class="chart-card span-2">
+        <figcaption>
+          <h3>Chart 3: Category share of total spending over time</h3>
+          <p class="sub">Subtitle.</p>
+        </figcaption>
+        <div id="chart-3" class="chart" data-placeholder="Chart 3: stacked area or bar chart"></div>
+        <p class="note">Source: add source here.</p>
+      </figure>
+    </section>
+
+    <!-- ============================================================
+         3. WHO SPENDS WHAT  (3 charts side by side, intro text above)
+         ============================================================ -->
+    <section id="households" class="section">
+      <h2 class="span-3">Who spends what</h2>
+
+      <div class="text span-3 intro">
+        <p>Introduce the comparison between household types. The three charts below share the same vertical scale so they can be read side by side.</p>
+      </div>
+
+      <figure class="chart-card span-1">
+        <figcaption>
+          <h3>Chart 4: By income group</h3>
+          <p class="sub">Subtitle.</p>
+        </figcaption>
+        <div id="chart-4" class="chart" data-placeholder="Chart 4"></div>
+      </figure>
+
+      <figure class="chart-card span-1">
+        <figcaption>
+          <h3>Chart 5: By household type</h3>
+          <p class="sub">Subtitle.</p>
+        </figcaption>
+        <div id="chart-5" class="chart" data-placeholder="Chart 5"></div>
+      </figure>
+
+      <figure class="chart-card span-1">
+        <figcaption>
+          <h3>Chart 6: By age of reference person</h3>
+          <p class="sub">Subtitle.</p>
+        </figcaption>
+        <div id="chart-6" class="chart" data-placeholder="Chart 6"></div>
+      </figure>
+
+      <p class="note span-3">Source: add source here.</p>
+    </section>
+
+    <!-- ============================================================
+         4. MAPS  (3 maps side by side, text above)
+         ============================================================ -->
+    <section id="maps" class="section">
+      <h2 class="span-3">Across Australia</h2>
+
+      <div class="text span-3 intro">
+        <p>Explain what the maps show (for example, states and territories or regions) and how colour is used. Use the same colour scale logic across all three so they compare easily.</p>
+      </div>
+
+      <figure class="chart-card span-1">
+        <figcaption>
+          <h3>Map 1: Total spending</h3>
+          <p class="sub">Subtitle.</p>
+        </figcaption>
+        <div id="map-1" class="chart map" data-placeholder="Map 1"></div>
+        <p class="note">Add a short takeaway or caption.</p>
+      </figure>
+
+      <figure class="chart-card span-1">
+        <figcaption>
+          <h3>Map 2: Housing share of spending</h3>
+          <p class="sub">Subtitle.</p>
+        </figcaption>
+        <div id="map-2" class="chart map" data-placeholder="Map 2"></div>
+        <p class="note">Add a short takeaway or caption.</p>
+      </figure>
+
+      <figure class="chart-card span-1">
+        <figcaption>
+          <h3>Map 3: Food share of spending</h3>
+          <p class="sub">Subtitle.</p>
+        </figcaption>
+        <div id="map-3" class="chart map" data-placeholder="Map 3"></div>
+        <p class="note">Add a short takeaway or caption.</p>
+      </figure>
+
+      <p class="note span-3">Source: add source and boundary data credit here.</p>
+    </section>
+
+    <!-- ============================================================
+         5. HOUSING COSTS  (text + chart, then chart + text)
+         ============================================================ -->
+    <section id="housing" class="section">
+      <h2 class="span-3">Housing costs</h2>
+
+      <div class="text span-1">
+        <h3>Renters and owners</h3>
+        <p>Explain the difference between renting, owning with a mortgage and owning outright.</p>
+      </div>
+
+      <figure class="chart-card span-2">
+        <figcaption>
+          <h3>Chart 7: Housing costs by tenure type</h3>
+          <p class="sub">Subtitle.</p>
+        </figcaption>
+        <div id="chart-7" class="chart" data-placeholder="Chart 7"></div>
+        <p class="note">Source: add source here.</p>
+      </figure>
+    </section>
+
+    <!-- ============================================================
+         6. ABOUT THE DATA
+         ============================================================ -->
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Max Swann. Built with <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>.</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       CHARTS
+       Add a Vega-Lite spec for each chart ID below. Charts with no spec
+       keep their grey placeholder box. Delete this note once you are done.
+
+       Example (a bar chart loaded from a CSV in a /data folder):
+
+       "chart-2": {
+         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+         "width": "container",
+         "height": 300,
+         "data": { "url": "data/spending.csv" },
+         "mark": "bar",
+         "encoding": {
+           "y": { "field": "category", "type": "nominal", "sort": "-x" },
+           "x": { "field": "weekly_spend", "type": "quantitative" }
+         }
+       }
+
+       Maps use a "geoshape" mark with a GeoJSON or TopoJSON file.
+       ============================================================ -->
+  <script>
+    const specs = {
+      // "chart-1": { ... },
+      // "chart-2": { ... },
+      // "chart-3": { ... },
+      // "chart-4": { ... },
+      // "chart-5": { ... },
+      // "chart-6": { ... },
+      // "chart-7": { ... },
+      // "map-1":   { ... },
+      // "map-2":   { ... },
+      // "map-3":   { ... }
+    };
+
+    // Shared chart styling so every chart matches the page
+    const vegaConfig = {
+      background: null,
+      font: "Source Sans 3, system-ui, sans-serif",
+      view: { stroke: null },
+      axis: {
+        labelColor: "#4a5a5f",
+        titleColor: "#4a5a5f",
+        gridColor: "#e3e8e8",
+        domainColor: "#b9c4c5",
+        tickColor: "#b9c4c5"
+      },
+      legend: { labelColor: "#4a5a5f", titleColor: "#4a5a5f" },
+      range: {
+        category: ["#0f5c63", "#d9822b", "#5a7fb5", "#8a4f7d", "#6a9a4a", "#b5483a"]
+      }
+    };
+
+    for (const [id, spec] of Object.entries(specs)) {
+      vegaEmbed("#" + id, spec, { actions: false, config: vegaConfig })
+        .catch(err => {
+          document.getElementById(id).textContent = "Chart failed to load: " + err.message;
+        });
+    }
+  </script>
+</body>
+</html>
