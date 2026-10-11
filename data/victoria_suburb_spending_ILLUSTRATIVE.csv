@@ -1,0 +1,8 @@
+suburb,longitude,latitude,category,spending_aud,source_status
+Melbourne CBD,144.9631,-37.8136,Food,180,Illustrative only,Illustrative coordinates and spending; replace before publication
+Carlton,144.9669,-37.8,Transport,110,Illustrative only,Illustrative coordinates and spending; replace before publication
+Richmond,145.001,-37.8183,Housing,420,Illustrative only,Illustrative coordinates and spending; replace before publication
+Footscray,144.9,-37.799,Food,160,Illustrative only,Illustrative coordinates and spending; replace before publication
+Geelong,144.36,-38.1499,Transport,140,Illustrative only,Illustrative coordinates and spending; replace before publication
+Ballarat,143.8503,-37.5622,Housing,300,Illustrative only,Illustrative coordinates and spending; replace before publication
+Bendigo,144.2802,-36.757,Food,155,Illustrative only,Illustrative coordinates and spending; replace before publication

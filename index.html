@@ -1,278 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Household Expenditure in Australia</title>
-  <meta name="description" content="An interactive look at how Australian households spend their money.">
-
+  <title>The Cost of Living | A snapshot into Household Spending</title>
+  <meta name="description" content="An interactive visual story about Australian household expenditure, regional differences and living costs.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
+<header class="site-header">
+  <div class="header-inner">
+    <p class="eyebrow">An Australian household spending story</p>
+    <h1>The Cost of Living</h1>
+    <p class="subtitle">Snapshot into Household Spending</p>
+    <p class="intro">Where household money goes, how spending changes, and why everyday costs look different across places and generations.</p>
+    <div class="header-meta"><span>DATA STORY</span><span>AUSTRALIA · VICTORIA</span><span>SPENDING + HOUSING</span></div>
+  </div>
+</header>
 
-  <!-- ============================================================
-       HEADER + SECTION NAV
-       ============================================================ -->
-  <header class="site-header">
-    <div class="wrap">
-      <h1>Household expenditure in Australia</h1>
-      <p class="lede">One or two sentences that say what this page shows and why it matters.</p>
-      <nav class="section-nav" aria-label="Sections">
-        <a href="#overview">Overview</a>
-        <a href="#categories">Where the money goes</a>
-        <a href="#households">Who spends what</a>
-        <a href="#maps">Across Australia</a>
-        <a href="#housing">Housing costs</a>
-        <a href="#about">About the data</a>
-      </nav>
+<main class="page-wrap">
+  <section class="story-section" id="overview">
+    <div class="section-heading"><span class="section-number">01</span><div><p class="section-kicker">The big picture</p><h2>What does it cost to live?</h2></div></div>
+    <p class="section-lead">Household expenditure reflects the essentials people need, the choices they make, and the prices they face. Begin with the national picture, then zoom in on categories, regions and housing costs.</p>
+    <div class="three-col">
+      <article class="stat-card"><p class="stat-label">Latest populated ABS headline</p><p class="stat-value">+1.1%</p><p class="stat-note">Australian household spending, July 2026 month-on-month change.</p><span class="source-tag">ABS · July 2026</span></article>
+      <article class="stat-card"><p class="stat-label">Victoria</p><p class="stat-value">+1.3%</p><p class="stat-note">State household spending, July 2026 month-on-month change.</p><span class="source-tag">ABS · July 2026</span></article>
     </div>
-  </header>
+  </section>
 
-  <main class="wrap">
+  <section class="story-section" id="where">
+    <div class="section-heading"><span class="section-number">02</span><div><p class="section-kicker">Geography</p><h2>Where is spending changing?</h2></div></div>
+    <p class="section-lead">Use the month selector to explore the state-level pattern. The second supplied map is included separately; both map files currently use the same geographic layer and dataset.</p>
+    <div class="three-col">
+      <article class="chart-card span-3"><div class="card-heading"><div><h3>Australian spending change</h3></div><span ></span></div><p class="chart-question">Where has spending increased or decreased?</p><div id="chart-map-1a" class="chart-slot chart-tall"></div></article>
+      <article class="chart-card span-3"><div class="card-heading"><div><h3>State × category change</h3></div><span class="idiom">Heatmap</span></div><p class="chart-question">Which categories drive differences between states?</p><div id="chart-heatmap" class="chart-slot"></div><p class="chart-caption">The supplied heatmap spec is preserved. Its CSV currently contains illustrative values and must be replaced with real state-by-category observations.</p></article>
+    </div>
+  </section>
 
-    <!--
-      LAYOUT GUIDE
-      The page is a 3-column grid. Each block sets how many columns it takes:
-        .span-1  one column   (good for text, or a small chart/map)
-        .span-2  two columns  (good for a main chart)
-        .span-3  full width   (good for headings, wide charts, intro text)
-      Put a .span-1 text block next to a .span-2 chart to place them side by side.
-      On tablets the grid drops to 2 columns, on phones to 1.
-    -->
+  <section class="story-section" id="categories">
+    <div class="section-heading"><span class="section-number">03</span><div><p class="section-kicker">Categories and composition</p><h2>Which costs are moving?</h2></div></div>
+    <div class="three-col">
+      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">CHART 03</span><h3>Largest category shifts</h3></div><span class="idiom">Connected dot plot</span></div><p class="chart-question">Which categories changed most from May to July?</p><div id="chart-connected-dot" class="chart-slot"></div></article>
+      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">CHART 04</span><h3>Inner, outer and regional</h3></div><span class="idiom">Slope chart</span></div><p class="chart-question">How does expenditure differ by area?</p><div id="chart-slope" class="chart-slot"></div><p class="chart-caption">Illustrative data. Replace with a sourced, comparable regional dataset.</p></article>
+      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">CHART 05</span><h3>Urban vs regional</h3></div><span class="idiom">Butterfly chart</span></div><p class="chart-question">Which categories contribute most to the gap?</p><div id="chart-butterfly" class="chart-slot"></div><p class="chart-caption">Illustrative data. Replace before interpreting differences.</p></article>
+      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">CHART 06</span><h3>Spending composition</h3></div><span class="idiom">Radial composition</span></div><p class="chart-question">How does the spending mix differ?</p><div id="chart-radial" class="chart-slot"></div><p class="chart-caption">Illustrative budget shares; not official ABS data.</p></article>
+    </div>
+  </section>
 
-    <!-- ============================================================
-         1. OVERVIEW  (text + 1 chart)
-         ============================================================ -->
-    <section id="overview" class="section">
-      <h2 class="span-3">Overview</h2>
+  <section class="story-section" id="people">
+    <div class="section-heading"><span class="section-number">04</span><div><p class="section-kicker">People and households</p><h2>Who spends differently?</h2></div></div>
+    <p class="section-lead">Age can reveal generational patterns, but if your brief requires income groups or household types, replace these examples with a source that measures those groups directly.</p>
+    <div class="three-col">
+      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">CHART 07</span><h3>Generational spending</h3></div><span class="idiom">Grouped bars</span></div><p class="chart-question">How does spending differ between age groups?</p><div id="chart-age-bars" class="chart-slot"></div><p class="chart-caption">Illustrative index only.</p></article>
+      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">CHART 08</span><h3>Spending profiles</h3></div><span class="idiom">Radar-style chart</span></div><p class="chart-question">How does category composition vary by generation?</p><div id="chart-radar" class="chart-slot"></div><p class="chart-caption">The 1–5 scale is illustrative, not measured data.</p></article>
+      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">MAP 03</span><h3>Victorian local spending</h3></div><span class="idiom">Proportional symbols</span></div><p class="chart-question">Where is spending concentrated across suburbs?</p><div id="chart-symbol-map" class="chart-slot"></div><p class="chart-caption">Illustrative coordinates and values; replace with sourced suburb-level data.</p></article>
+    </div>
+  </section>
 
-      <div class="text span-1">
-        <h3>Headline finding</h3>
-        <p>Write the main takeaway here. Keep each text block short so it sits comfortably beside a chart.</p>
-        <p>Add a second paragraph if you need to explain how to read the chart.</p>
-      </div>
+  <section class="story-section" id="housing">
+    <div class="section-heading"><span class="section-number">05</span><div><p class="section-kicker">Housing pressure</p><h2>How much does location matter?</h2></div></div>
+    <div class="three-col">
+      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">MAP 04</span><h3>Rent across Victoria</h3></div><span class="idiom">Graduated symbols</span></div><p class="chart-question">Where are rents higher or lower?</p><div id="chart-housing-map" class="chart-slot"></div><p class="chart-caption">Current chart is a ranked symbol comparison, not a geographic map. Add coordinates and use a sourced rental table to make it a map.</p></article>
+      <article class="chart-card span-2"><div class="card-heading"><div><span class="chart-index">CHART 09</span><h3>Housing costs and spending</h3></div><span class="idiom">Connected scatter</span></div><p class="chart-question">How does the relationship between housing costs and expenditure change over time?</p><div id="chart-housing-scatter" class="chart-slot"></div><p class="chart-caption">Illustrative data. Match regions and time periods across both sources; describe association, not causation.</p></article>
+    </div>
+  </section>
 
-      <figure class="chart-card span-2">
-        <figcaption>
-          <h3>Chart 1: Average weekly household spending over time</h3>
-          <p class="sub">Subtitle: units, period and what is being measured.</p>
-        </figcaption>
-        <div id="chart-1" class="chart" data-placeholder="Chart 1: line chart"></div>
-        <p class="note">Source: add source here.</p>
-      </figure>
-    </section>
-
-    <!-- ============================================================
-         2. WHERE THE MONEY GOES  (2 charts + text)
-         ============================================================ -->
-    <section id="categories" class="section">
-      <h2 class="span-3">Where the money goes</h2>
-
-      <figure class="chart-card span-2">
-        <figcaption>
-          <h3>Chart 2: Spending by category</h3>
-          <p class="sub">Subtitle.</p>
-        </figcaption>
-        <div id="chart-2" class="chart" data-placeholder="Chart 2: bar chart"></div>
-        <p class="note">Source: add source here.</p>
-      </figure>
-
-      <div class="text span-1">
-        <h3>Reading the categories</h3>
-        <p>Explain what the largest and smallest categories tell us.</p>
-      </div>
-
-      <div class="text span-1">
-        <h3>How the mix has shifted</h3>
-        <p>Describe the change over time shown in the next chart.</p>
-      </div>
-
-      <figure class="chart-card span-2">
-        <figcaption>
-          <h3>Chart 3: Category share of total spending over time</h3>
-          <p class="sub">Subtitle.</p>
-        </figcaption>
-        <div id="chart-3" class="chart" data-placeholder="Chart 3: stacked area or bar chart"></div>
-        <p class="note">Source: add source here.</p>
-      </figure>
-    </section>
-
-    <!-- ============================================================
-         3. WHO SPENDS WHAT  (3 charts side by side, intro text above)
-         ============================================================ -->
-    <section id="households" class="section">
-      <h2 class="span-3">Who spends what</h2>
-
-      <div class="text span-3 intro">
-        <p>Introduce the comparison between household types. The three charts below share the same vertical scale so they can be read side by side.</p>
-      </div>
-
-      <figure class="chart-card span-1">
-        <figcaption>
-          <h3>Chart 4: By income group</h3>
-          <p class="sub">Subtitle.</p>
-        </figcaption>
-        <div id="chart-4" class="chart" data-placeholder="Chart 4"></div>
-      </figure>
-
-      <figure class="chart-card span-1">
-        <figcaption>
-          <h3>Chart 5: By household type</h3>
-          <p class="sub">Subtitle.</p>
-        </figcaption>
-        <div id="chart-5" class="chart" data-placeholder="Chart 5"></div>
-      </figure>
-
-      <figure class="chart-card span-1">
-        <figcaption>
-          <h3>Chart 6: By age of reference person</h3>
-          <p class="sub">Subtitle.</p>
-        </figcaption>
-        <div id="chart-6" class="chart" data-placeholder="Chart 6"></div>
-      </figure>
-
-      <p class="note span-3">Source: add source here.</p>
-    </section>
-
-    <!-- ============================================================
-         4. MAPS  (3 maps side by side, text above)
-         ============================================================ -->
-    <section id="maps" class="section">
-      <h2 class="span-3">Across Australia</h2>
-
-      <div class="text span-3 intro">
-        <p>Explain what the maps show (for example, states and territories or regions) and how colour is used. Use the same colour scale logic across all three so they compare easily.</p>
-      </div>
-
-      <figure class="chart-card span-1">
-        <figcaption>
-          <h3>Map 1: Total spending</h3>
-          <p class="sub">Subtitle.</p>
-        </figcaption>
-        <div id="map-1" class="chart map" data-placeholder="Map 1"></div>
-        <p class="note">Add a short takeaway or caption.</p>
-      </figure>
-
-      <figure class="chart-card span-1">
-        <figcaption>
-          <h3>Map 2: Housing share of spending</h3>
-          <p class="sub">Subtitle.</p>
-        </figcaption>
-        <div id="map-2" class="chart map" data-placeholder="Map 2"></div>
-        <p class="note">Add a short takeaway or caption.</p>
-      </figure>
-
-      <figure class="chart-card span-1">
-        <figcaption>
-          <h3>Map 3: Food share of spending</h3>
-          <p class="sub">Subtitle.</p>
-        </figcaption>
-        <div id="map-3" class="chart map" data-placeholder="Map 3"></div>
-        <p class="note">Add a short takeaway or caption.</p>
-      </figure>
-
-      <p class="note span-3">Source: add source and boundary data credit here.</p>
-    </section>
-
-    <!-- ============================================================
-         5. HOUSING COSTS  (text + chart, then chart + text)
-         ============================================================ -->
-    <section id="housing" class="section">
-      <h2 class="span-3">Housing costs</h2>
-
-      <div class="text span-1">
-        <h3>Renters and owners</h3>
-        <p>Explain the difference between renting, owning with a mortgage and owning outright.</p>
-      </div>
-
-      <figure class="chart-card span-2">
-        <figcaption>
-          <h3>Chart 7: Housing costs by tenure type</h3>
-          <p class="sub">Subtitle.</p>
-        </figcaption>
-        <div id="chart-7" class="chart" data-placeholder="Chart 7"></div>
-        <p class="note">Source: add source here.</p>
-      </figure>
-    </section>
-
-    <!-- ============================================================
-         6. ABOUT THE DATA
-         ============================================================ -->
-
-  </main>
+  <section class="story-section" id="conclusion">
+    <div class="section-heading"><span class="section-number">06</span><div><p class="section-kicker">Takeaways</p><h2>The cost of living is not one number</h2></div></div>
+    <div class="conclusion-grid">
+      <div><p class="pull-quote">Where people live, what they need, and which costs rise can all shape the household budget.</p><p>Use the final conclusion to summarise three evidence-backed findings: the strongest category movement, the clearest regional contrast, and how housing costs relate to expenditure. Add a source note beside each claim.</p></div>
+      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">OPTIONAL</span><h3>Common purchase themes</h3></div><span class="idiom">Word cloud</span></div><div class="word-cloud"><span>Food</span><span>Fuel</span><span>Rent</span><span>Groceries</span><span>Transport</span><span>Health</span><span>Utilities</span><span>Dining</span><span>Clothing</span></div><p class="chart-caption">Keep only if you find item-level purchase data. The ABS MHSI does not identify the most commonly purchased individual products.</p></article>
+    </div>
+  </section>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <p>Max Swann. Built with <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>.</p>
+    <p><strong>Sources and method</strong></p>
+    <p>ABS Monthly Household Spending Indicator: monthly changes at national and state/territory level. Regional spending and housing data should be taken from comparable official tables or a documented source.</p>
+    <div class="source-links">
+      <a href="https://www.abs.gov.au/statistics/economy/finance/monthly-household-spending-indicator/latest-release" target="_blank" rel="noreferrer">ABS Monthly Household Spending Indicator ↗</a>
+      <a href="https://geografia.com.au/spendmapp/" target="_blank" rel="noreferrer">Spendmapp / Geografia ↗</a>
+      <a href="https://www.dffh.vic.gov.au/publications/past-rental-reports" target="_blank" rel="noreferrer">Homes Victoria rental reports ↗</a>
     </div>
+    <p class="footer-small">Prototype for an academic data visualisation. Files labelled ILLUSTRATIVE are not official observations.</p>
   </footer>
+</main>
 
-  <!-- ============================================================
-       CHARTS
-       Add a Vega-Lite spec for each chart ID below. Charts with no spec
-       keep their grey placeholder box. Delete this note once you are done.
-
-       Example (a bar chart loaded from a CSV in a /data folder):
-
-       "chart-2": {
-         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-         "width": "container",
-         "height": 300,
-         "data": { "url": "data/spending.csv" },
-         "mark": "bar",
-         "encoding": {
-           "y": { "field": "category", "type": "nominal", "sort": "-x" },
-           "x": { "field": "weekly_spend", "type": "quantitative" }
-         }
-       }
-
-       Maps use a "geoshape" mark with a GeoJSON or TopoJSON file.
-       ============================================================ -->
-  <script>
-    const specs = {
-      // "chart-1": { ... },
-      // "chart-2": { ... },
-      // "chart-3": { ... },
-      // "chart-4": { ... },
-      // "chart-5": { ... },
-      // "chart-6": { ... },
-      // "chart-7": { ... },
-      // "map-1":   { ... },
-      // "map-2":   { ... },
-      // "map-3":   { ... }
-    };
-
-    // Shared chart styling so every chart matches the page
-    const vegaConfig = {
-      background: null,
-      font: "Source Sans 3, system-ui, sans-serif",
-      view: { stroke: null },
-      axis: {
-        labelColor: "#4a5a5f",
-        titleColor: "#4a5a5f",
-        gridColor: "#e3e8e8",
-        domainColor: "#b9c4c5",
-        tickColor: "#b9c4c5"
-      },
-      legend: { labelColor: "#4a5a5f", titleColor: "#4a5a5f" },
-      range: {
-        category: ["#0f5c63", "#d9822b", "#5a7fb5", "#8a4f7d", "#6a9a4a", "#b5483a"]
-      }
-    };
-
-    for (const [id, spec] of Object.entries(specs)) {
-      vegaEmbed("#" + id, spec, { actions: false, config: vegaConfig })
-        .catch(err => {
-          document.getElementById(id).textContent = "Chart failed to load: " + err.message;
-        });
-    }
-  </script>
+<!-- Each visualization is loaded from its own file in /js. -->
+<script src="js/map-1a.js"></script>
+<script src="js/chart-2-heatmap.js"></script>
+<script src="js/chart-3-connected-dot.js"></script>
+<script src="js/chart-4-slope.js"></script>
+<script src="js/chart-5-butterfly.js"></script>
+<script src="js/chart-6-age-bars.js"></script>
+<script src="js/chart-7-radar.js"></script>
+<script src="js/chart-8-housing-spending.js"></script>
+<script src="js/map-3-proportional-symbol.js"></script>
+<script src="js/map-4-housing-rent.js"></script>
+<script src="js/chart-9-radial.js"></script>
 </body>
 </html>

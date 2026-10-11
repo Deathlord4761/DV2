@@ -1,221 +1,30 @@
-/* ============================================================
-   Tokens: edit these to restyle the page
-   (light theme only, so charts always sit on a white surface)
-   ============================================================ */
-:root {
-  color-scheme: light;
-
-  --page: #f2f5f5;
-  --surface: #ffffff;
-  --text: #1b2a2e;
-  --muted: #4a5a5f;
-  --border: #d9e0e1;
-  --accent: #0f5c63;
-
-  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-head: "Source Serif 4", Georgia, "Times New Roman", serif;
-
-  --max-width: 1240px;
-  --gap: 1.5rem;
-  --radius: 6px;
-  --chart-height: 320px;
-  --map-height: 360px;
+/* Three-column editorial layout for The Cost of Living */
+:root{--ink:#25343b;--muted:#66757b;--paper:#f7f7f2;--card:#fff;--line:#dfe6e2;--accent:#bf5d42;--green:#527f78;--gold:#d2a24c;--pale-green:#e8efeb;--shadow:0 8px 26px rgba(37,52,59,.055)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",Arial,sans-serif;line-height:1.55}
+.site-header{background:#e8efeb;border-bottom:1px solid #d8e2dc;padding:66px 24px 54px}.header-inner{max-width:1320px;margin:auto}.eyebrow,.section-kicker{margin:0 0 8px;color:var(--accent);text-transform:uppercase;letter-spacing:.14em;font-size:.73rem;font-weight:700}
+h1,h2{font-family:"Playfair Display",Georgia,serif;letter-spacing:-.025em}h1{font-size:clamp(3.1rem,6.7vw,6.3rem);line-height:.98;margin:0}h2{font-size:clamp(1.8rem,3vw,2.65rem);line-height:1.1;margin:0}h3{font-size:1rem;line-height:1.25;margin:4px 0 0;font-weight:700}p{margin-top:0}
+.subtitle{margin:18px 0 15px;font-size:clamp(1.2rem,2.2vw,1.8rem);color:#49625f;font-weight:500}.intro{max-width:720px;color:#4f6064;font-size:1.05rem}.header-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}.header-meta span{border:1px solid #b9cbc3;padding:6px 9px;border-radius:3px;color:#49625f;font-size:.66rem;font-weight:700;letter-spacing:.09em}
+.page-wrap{max-width:1440px;padding:0 28px 50px;margin:0 auto}.story-section{padding:48px 0 18px;border-bottom:1px solid var(--line)}.section-heading{display:flex;align-items:flex-start;gap:15px;margin-bottom:20px}.section-number{font-size:.8rem;color:var(--accent);border-top:2px solid var(--accent);padding-top:7px;min-width:34px;font-weight:700}.section-kicker{margin-bottom:3px}.section-lead{max-width:850px;color:var(--muted);margin:-3px 0 22px 49px}
+.three-col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}.span-2{grid-column:span 2}.stat-card,.chart-card{background:var(--card);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);min-width:0}.stat-card{padding:21px 22px}.stat-label{color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:8px}.stat-value{font-family:"Playfair Display",Georgia,serif;font-size:2.8rem;line-height:1;margin-bottom:10px;color:var(--accent)}.stat-note{color:var(--muted);font-size:.88rem;margin-bottom:15px}.source-tag,.idiom,.chart-index{display:inline-block;font-size:.63rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase}.source-tag{color:var(--green);background:var(--pale-green);padding:5px 7px;border-radius:3px}
+.chart-card{padding:17px 17px 15px;overflow:hidden}.card-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}.chart-index{color:var(--accent);font-size:.61rem}.idiom{color:#55726b;background:#edf3ef;border-radius:3px;padding:5px 7px;font-size:.58rem;white-space:nowrap}.chart-question{font-size:.83rem;color:var(--muted);margin-bottom:10px}.chart-slot{width:100%;min-height:230px}.chart-tall{min-height:330px}.chart-caption{color:#748187;font-size:.73rem;line-height:1.45;margin:10px 0 0}.vega-embed{width:100%}.vega-embed details{display:none}
+.conclusion-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}.pull-quote{font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.2;max-width:680px;margin:10px 0 18px}.conclusion-grid>div>p:last-child{color:var(--muted);max-width:680px}.word-cloud{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:7px 12px;min-height:150px;padding:15px 0}.word-cloud span{color:var(--green);font-weight:700;font-size:1rem}.word-cloud span:nth-child(3n){color:var(--accent);font-size:1.5rem}.word-cloud span:nth-child(4n){font-family:"Playfair Display",Georgia,serif;font-size:1.25rem}
+.site-footer{padding:34px 0 0;color:var(--muted);font-size:.82rem}.site-footer p{max-width:1000px}.site-footer strong{color:var(--ink)}.source-links{display:flex;flex-wrap:wrap;gap:10px 20px;margin:18px 0}.source-links a{color:#3d7066;text-decoration-thickness:1px;text-underline-offset:3px}.source-links a:hover{color:var(--accent)}.footer-small{border-top:1px solid var(--line);padding-top:14px;font-size:.72rem}
+@media(max-width:980px){.three-col{grid-template-columns:repeat(2,minmax(0,1fr))}.span-2{grid-column:span 2}.conclusion-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.site-header{padding:48px 20px 38px}.page-wrap{padding:0 15px 32px}.three-col{grid-template-columns:1fr;gap:13px}.span-2{grid-column:auto}.section-lead{margin-left:0}.card-heading{flex-wrap:wrap}.chart-tall{min-height:250px}}
+/* Make elements span across all three columns */
+.span-3 {
+  grid-column: span 3;
 }
 
-/* ============================================================
-   Base
-   ============================================================ */
-*, *::before, *::after { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 1rem;
-  -webkit-text-size-adjust: 100%;
+/* Ensure full width on tablet and mobile viewports */
+@media(max-width: 980px) {
+  .span-3 {
+    grid-column: span 2;
+  }
 }
 
-body {
-  margin: 0;
-  font-family: var(--font-body);
-  font-size: 1.0625rem;
-  line-height: 1.55;
-  color: var(--text);
-  background: var(--page);
-}
-
-.wrap {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
-
-h1, h2, h3 {
-  font-family: var(--font-head);
-  line-height: 1.2;
-  margin: 0;
-}
-
-h1 { font-size: clamp(1.9rem, 4vw, 2.75rem); font-weight: 700; }
-h2 { font-size: 1.6rem; font-weight: 700; }
-h3 { font-size: 1.1rem; font-weight: 500; }
-
-p { margin: 0 0 0.9em; }
-p:last-child { margin-bottom: 0; }
-
-a { color: var(--accent); }
-a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
-
-/* ============================================================
-   Header and navigation
-   ============================================================ */
-.site-header {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 2.5rem 0 0;
-}
-
-.lede {
-  max-width: 62ch;
-  margin-top: 0.75rem;
-  font-size: 1.2rem;
-  color: var(--muted);
-}
-
-.section-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 1.5rem;
-  margin-top: 1.75rem;
-}
-
-.section-nav a {
-  padding: 0.75rem 0;
-  color: var(--muted);
-  text-decoration: none;
-  border-bottom: 3px solid transparent;
-}
-
-.section-nav a:hover,
-.section-nav a:focus-visible {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-
-/* ============================================================
-   The 3-column grid
-   .section is the grid. Children choose .span-1 / .span-2 / .span-3.
-   ============================================================ */
-.section {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--gap);
-  align-items: start;
-  padding: 3rem 0 1rem;
-}
-
-.section + .section {
-  border-top: 1px solid var(--border);
-}
-
-.section > h2 {
-  padding-bottom: 0.25rem;
-}
-
-.span-1 { grid-column: span 1; }
-.span-2 { grid-column: span 2; }
-.span-3 { grid-column: 1 / -1; }
-
-/* Tablet: 2 columns. Wide items take the full row. */
-@media (max-width: 1000px) {
-  .section { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .span-2 { grid-column: 1 / -1; }
-}
-
-/* Phone: 1 column */
-@media (max-width: 640px) {
-  .section { grid-template-columns: minmax(0, 1fr); padding-top: 2rem; }
-  .span-1, .span-2, .span-3 { grid-column: 1 / -1; }
-}
-
-/* ============================================================
-   Text blocks
-   ============================================================ */
-.text h3 {
-  margin-bottom: 0.5rem;
-  color: var(--accent);
-}
-
-.text.intro p {
-  max-width: 70ch;
-  color: var(--muted);
-}
-
-/* ============================================================
-   Chart cards
-   ============================================================ */
-.chart-card {
-  margin: 0;
-  padding: 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  min-width: 0; /* lets charts shrink inside grid cells */
-}
-
-.chart-card figcaption { margin-bottom: 1rem; }
-
-.sub {
-  margin: 0.25rem 0 0;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-
-.note {
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-/* The chart area. Shows a placeholder until Vega-Lite fills it. */
-.chart {
-  width: 100%;
-  min-height: var(--chart-height);
-}
-
-.chart.map { min-height: var(--map-height); }
-
-.chart:empty {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f7f9f9;
-  border: 1px dashed #b9c4c5;
-  border-radius: 4px;
-}
-
-.chart:empty::before {
-  content: attr(data-placeholder);
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.chart .vega-embed { width: 100%; }
-
-/* ============================================================
-   About section and footer
-   ============================================================ */
-.about { padding-bottom: 3rem; }
-
-.site-footer {
-  padding: 1.5rem 0 2.5rem;
-  border-top: 1px solid var(--border);
-  background: var(--surface);
-  font-size: 0.9rem;
-  color: var(--muted);
+@media(max-width: 620px) {
+  .span-3 {
+    grid-column: auto;
+  }
 }

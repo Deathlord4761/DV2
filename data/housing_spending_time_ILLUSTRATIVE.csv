@@ -1,0 +1,16 @@
+region,year,median_weekly_rent_aud,monthly_spend_aud,source_status
+Inner Melbourne,2022,600,1450.0,Illustrative only; replace with matched regional time series
+Inner Melbourne,2023,625,1487.5,Illustrative only; replace with matched regional time series
+Inner Melbourne,2024,650,1525.0,Illustrative only; replace with matched regional time series
+Inner Melbourne,2025,680,1570.0,Illustrative only; replace with matched regional time series
+Inner Melbourne,2026,705,1607.5,Illustrative only; replace with matched regional time series
+Outer Melbourne,2022,480,1320.0,Illustrative only; replace with matched regional time series
+Outer Melbourne,2023,505,1357.5,Illustrative only; replace with matched regional time series
+Outer Melbourne,2024,530,1395.0,Illustrative only; replace with matched regional time series
+Outer Melbourne,2025,560,1440.0,Illustrative only; replace with matched regional time series
+Outer Melbourne,2026,585,1477.5,Illustrative only; replace with matched regional time series
+Regional Victoria,2022,360,1260.0,Illustrative only; replace with matched regional time series
+Regional Victoria,2023,385,1297.5,Illustrative only; replace with matched regional time series
+Regional Victoria,2024,410,1335.0,Illustrative only; replace with matched regional time series
+Regional Victoria,2025,440,1380.0,Illustrative only; replace with matched regional time series
+Regional Victoria,2026,465,1417.5,Illustrative only; replace with matched regional time series
