@@ -20,7 +20,6 @@
     <h1>The Cost of Living</h1>
     <p class="subtitle">Snapshot into Household Spending</p>
     <p class="intro">Where household money goes, how spending changes, and why everyday costs look different across places and generations.</p>
-    <div class="header-meta"><span>DATA STORY</span><span>AUSTRALIA · VICTORIA</span><span>SPENDING + HOUSING</span></div>
   </div>
 </header>
 
@@ -38,7 +37,7 @@
     <div class="section-heading"><span class="section-number">02</span><div><p class="section-kicker">Geography</p><h2>Where is spending changing?</h2></div></div>
     <p class="section-lead">Use the month selector to explore the state-level pattern. The second supplied map is included separately; both map files currently use the same geographic layer and dataset.</p>
     <div class="three-col">
-      <article class="chart-card span-3"><div class="card-heading"><div><h3>Australian spending change</h3></div><span ></span></div><p class="chart-question">Where has spending increased or decreased?</p><div id="chart-map-1a" class="chart-slot chart-tall"></div></article>
+      <article class="chart-card span-3"><div class="card-heading"><div><h3>Australian spending change monthly by state</h3></div><span ></span></div><p class="chart-question">Where has spending increased or decreased?</p><div id="chart-map-1a" class="chart-slot chart-tall"></div></article>
       <article class="chart-card span-3"><div class="card-heading"><div><h3>Australian States and how each spending category changes</h3></div></div><p class="chart-question">Which categories drive differences between states?</p><div id="chart-heatmap" class="chart-slot"></div><p class="chart-caption"></article>
     </div>
   </section>
@@ -46,9 +45,9 @@
   <section class="story-section" id="categories">
     <div class="section-heading"><span class="section-number">03</span><div><p class="section-kicker">Categories and composition</p><h2>Which costs are moving?</h2></div></div>
     <div class="three-col">
-      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">CHART 03</span><h3>Largest category shifts</h3></div><span class="idiom">Connected dot plot</span></div><p class="chart-question">Which categories changed most from May to July?</p><div id="chart-connected-dot" class="chart-slot"></div></article>
-      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">CHART 04</span><h3>Inner, outer and regional</h3></div><span class="idiom">Slope chart</span></div><p class="chart-question">How does expenditure differ by area?</p><div id="chart-slope" class="chart-slot"></div><p class="chart-caption">Illustrative data. Replace with a sourced, comparable regional dataset.</p></article>
-      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">CHART 05</span><h3>Urban vs regional</h3></div><span class="idiom">Butterfly chart</span></div><p class="chart-question">Which categories contribute most to the gap?</p><div id="chart-butterfly" class="chart-slot"></div><p class="chart-caption">Illustrative data. Replace before interpreting differences.</p></article>
+      <article class="chart-card span-2"><div class="card-heading"><div><h3>Largest category shifts</h3></div></div><p class="chart-question">Which categories changed most from May to July?</p><div id="chart" class="chart-slot"></div></article>
+      <article class="chart-card span-2"></div><div id="chart-slope" class="chart-slot chart-tall"></div></article>
+      <article class="chart-card"><div class="card-heading"><div><h3>Greater City vs Rest of State (2016)</h3></div></div><p class="chart-question">Which categories contribute most to the gap?</p><div id="chart-butterfly" class="chart-slot"></div></article>
       <article class="chart-card"><div class="card-heading"><div><span class="chart-index">CHART 06</span><h3>Spending composition</h3></div><span class="idiom">Radial composition</span></div><p class="chart-question">How does the spending mix differ?</p><div id="chart-radial" class="chart-slot"></div><p class="chart-caption">Illustrative budget shares; not official ABS data.</p></article>
     </div>
   </section>
@@ -97,5 +96,7 @@
 <script src="js/map-1a.js"></script>
 <script src="js/chart-2-heatmap.js"></script>
 <script src="js/spec_map_rent.js"></script>
+<script src="js/chart-slope.js"></script>
+<script src="js/chart-butterfly.js"></script>
 </body>
 </html>

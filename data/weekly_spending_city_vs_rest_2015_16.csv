@@ -1,0 +1,31 @@
+rank,category,category_short,area,weekly_spend,gap_dollars,gap_pct
+1,Current housing costs (selected dwelling),Housing costs,Greater capital city,305.85,74.78,32.4
+1,Current housing costs (selected dwelling),Housing costs,Rest of state,231.07,74.78,32.4
+2,Food and non-alcoholic beverages,Food & non-alc. drinks,Greater capital city,254.96,51.87,25.5
+2,Food and non-alcoholic beverages,Food & non-alc. drinks,Rest of state,203.09,51.87,25.5
+3,Transport,Transport,Greater capital city,212.77,18.83,9.7
+3,Transport,Transport,Rest of state,193.94,18.83,9.7
+4,Recreation,Recreation,Greater capital city,185.92,40.76,28.1
+4,Recreation,Recreation,Rest of state,145.16,40.76,28.1
+5,Miscellaneous goods and services,Misc. goods & services,Greater capital city,108.76,33.69,44.9
+5,Miscellaneous goods and services,Misc. goods & services,Rest of state,75.07,33.69,44.9
+6,Medical care and health expenses,Medical & health,Greater capital city,88.85,18.98,27.2
+6,Medical care and health expenses,Medical & health,Rest of state,69.87,18.98,27.2
+7,Household furnishings and equipment,Furnishings & equipment,Greater capital city,62.23,11.86,23.5
+7,Household furnishings and equipment,Furnishings & equipment,Rest of state,50.37,11.86,23.5
+8,Education,Education,Greater capital city,55.32,32.5,142.4
+8,Education,Education,Rest of state,22.82,32.5,142.4
+9,Household services and operation,Household services,Greater capital city,49.95,14.93,42.6
+9,Household services and operation,Household services,Rest of state,35.02,14.93,42.6
+10,Clothing and footwear,Clothing & footwear,Greater capital city,48.44,13.36,38.1
+10,Clothing and footwear,Clothing & footwear,Rest of state,35.08,13.36,38.1
+11,Communication,Communication,Greater capital city,48.35,5.29,12.3
+11,Communication,Communication,Rest of state,43.06,5.29,12.3
+12,Domestic fuel and power,Fuel & power,Greater capital city,42.51,4.61,12.2
+12,Domestic fuel and power,Fuel & power,Rest of state,37.9,4.61,12.2
+13,Alcoholic beverages,Alcoholic beverages,Greater capital city,32.15,0.45,1.4
+13,Alcoholic beverages,Alcoholic beverages,Rest of state,31.7,0.45,1.4
+14,Personal care,Personal care,Greater capital city,30.95,6.5,26.6
+14,Personal care,Personal care,Rest of state,24.45,6.5,26.6
+15,Tobacco products,Tobacco products,Greater capital city,11.79,-2.91,-19.8
+15,Tobacco products,Tobacco products,Rest of state,14.7,-2.91,-19.8
