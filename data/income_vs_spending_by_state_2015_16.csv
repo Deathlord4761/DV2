@@ -1,0 +1,10 @@
+state,state_name,level,disposable_income,spending,left_over,spending_pct_income,note
+NSW,New South Wales,State/territory,1820.0,1514.0,306.0,83.2,
+Vic,Victoria,State/territory,1670.0,1424.0,246.0,85.3,
+Qld,Queensland,State/territory,1629.0,1358.0,271.0,83.4,
+SA,South Australia,State/territory,1472.0,1191.0,281.0,80.9,
+WA,Western Australia,State/territory,1789.0,1420.0,369.0,79.4,
+Tas,Tasmania,State/territory,1309.0,1146.0,163.0,87.5,
+NT,Northern Territory,State/territory,2073.0,1701.0,372.0,82.1,Excludes very remote areas (about 22% of NT population)
+ACT,Australian Capital Territory,State/territory,1942.0,1644.0,298.0,84.7,
+Aust,Australia,National,1706.0,1422.0,284.0,83.4,

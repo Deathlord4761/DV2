@@ -1,0 +1,11 @@
+stress_level,stress_short,stress_order,type,weekly_spend,total_spend,share_pct,change_vs_none_pct
+None,None,1,Basic,900.0,1559.0,57.7,0.0
+None,None,1,Discretionary,659.0,1559.0,42.3,0.0
+1 indicator,1,2,Basic,888.0,1470.0,60.4,-1.3
+1 indicator,1,2,Discretionary,582.0,1470.0,39.6,-11.7
+2 indicators,2,3,Basic,815.0,1305.0,62.5,-9.4
+2 indicators,2,3,Discretionary,490.0,1305.0,37.5,-25.6
+3 indicators,3,4,Basic,758.0,1215.0,62.4,-15.8
+3 indicators,3,4,Discretionary,457.0,1215.0,37.6,-30.7
+4 or more indicators,4+,5,Basic,637.0,976.0,65.3,-29.2
+4 or more indicators,4+,5,Discretionary,339.0,976.0,34.7,-48.6
