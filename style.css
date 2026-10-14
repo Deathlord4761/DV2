@@ -1,30 +1,215 @@
-/* Three-column editorial layout for The Cost of Living */
-:root{--ink:#25343b;--muted:#66757b;--paper:#f7f7f2;--card:#fff;--line:#dfe6e2;--accent:#bf5d42;--green:#527f78;--gold:#d2a24c;--pale-green:#e8efeb;--shadow:0 8px 26px rgba(37,52,59,.055)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",Arial,sans-serif;line-height:1.55}
-.site-header{background:#e8efeb;border-bottom:1px solid #d8e2dc;padding:66px 24px 54px}.header-inner{max-width:1320px;margin:auto}.eyebrow,.section-kicker{margin:0 0 8px;color:var(--accent);text-transform:uppercase;letter-spacing:.14em;font-size:.73rem;font-weight:700}
-h1,h2{font-family:"Playfair Display",Georgia,serif;letter-spacing:-.025em}h1{font-size:clamp(3.1rem,6.7vw,6.3rem);line-height:.98;margin:0}h2{font-size:clamp(1.8rem,3vw,2.65rem);line-height:1.1;margin:0}h3{font-size:1rem;line-height:1.25;margin:4px 0 0;font-weight:700}p{margin-top:0}
-.subtitle{margin:18px 0 15px;font-size:clamp(1.2rem,2.2vw,1.8rem);color:#49625f;font-weight:500}.intro{max-width:720px;color:#4f6064;font-size:1.05rem}.header-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}.header-meta span{border:1px solid #b9cbc3;padding:6px 9px;border-radius:3px;color:#49625f;font-size:.66rem;font-weight:700;letter-spacing:.09em}
-.page-wrap{max-width:1440px;padding:0 28px 50px;margin:0 auto}.story-section{padding:48px 0 18px;border-bottom:1px solid var(--line)}.section-heading{display:flex;align-items:flex-start;gap:15px;margin-bottom:20px}.section-number{font-size:.8rem;color:var(--accent);border-top:2px solid var(--accent);padding-top:7px;min-width:34px;font-weight:700}.section-kicker{margin-bottom:3px}.section-lead{max-width:850px;color:var(--muted);margin:-3px 0 22px 49px}
-.three-col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}.span-2{grid-column:span 2}.stat-card,.chart-card{background:var(--card);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);min-width:0}.stat-card{padding:21px 22px}.stat-label{color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:8px}.stat-value{font-family:"Playfair Display",Georgia,serif;font-size:2.8rem;line-height:1;margin-bottom:10px;color:var(--accent)}.stat-note{color:var(--muted);font-size:.88rem;margin-bottom:15px}.source-tag,.idiom,.chart-index{display:inline-block;font-size:.63rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase}.source-tag{color:var(--green);background:var(--pale-green);padding:5px 7px;border-radius:3px}
-.chart-card{padding:17px 17px 15px;overflow:hidden}.card-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}.chart-index{color:var(--accent);font-size:.61rem}.idiom{color:#55726b;background:#edf3ef;border-radius:3px;padding:5px 7px;font-size:.58rem;white-space:nowrap}.chart-question{font-size:.83rem;color:var(--muted);margin-bottom:10px}.chart-slot{width:100%;min-height:230px}.chart-tall{min-height:330px}.chart-caption{color:#748187;font-size:.73rem;line-height:1.45;margin:10px 0 0}.vega-embed{width:100%}.vega-embed details{display:none}
-.conclusion-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}.pull-quote{font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.2;max-width:680px;margin:10px 0 18px}.conclusion-grid>div>p:last-child{color:var(--muted);max-width:680px}.word-cloud{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:7px 12px;min-height:150px;padding:15px 0}.word-cloud span{color:var(--green);font-weight:700;font-size:1rem}.word-cloud span:nth-child(3n){color:var(--accent);font-size:1.5rem}.word-cloud span:nth-child(4n){font-family:"Playfair Display",Georgia,serif;font-size:1.25rem}
-.site-footer{padding:34px 0 0;color:var(--muted);font-size:.82rem}.site-footer p{max-width:1000px}.site-footer strong{color:var(--ink)}.source-links{display:flex;flex-wrap:wrap;gap:10px 20px;margin:18px 0}.source-links a{color:#3d7066;text-decoration-thickness:1px;text-underline-offset:3px}.source-links a:hover{color:var(--accent)}.footer-small{border-top:1px solid var(--line);padding-top:14px;font-size:.72rem}
-@media(max-width:980px){.three-col{grid-template-columns:repeat(2,minmax(0,1fr))}.span-2{grid-column:span 2}.conclusion-grid{grid-template-columns:1fr}}
-@media(max-width:620px){.site-header{padding:48px 20px 38px}.page-wrap{padding:0 15px 32px}.three-col{grid-template-columns:1fr;gap:13px}.span-2{grid-column:auto}.section-lead{margin-left:0}.card-heading{flex-wrap:wrap}.chart-tall{min-height:250px}}
-/* Make elements span across all three columns */
-.span-3 {
-  grid-column: span 3;
+/* The Cost of Living – simple, open layout. Charts sit directly on the page (no cards). */
+
+:root {
+  --ink: #1b2a2e;        /* matches chart titles */
+  --muted: #5b6b66;      /* matches chart subtitles */
+  --faint: #8a9792;
+  --line: #e3e8e8;
+  --accent: #2b7a78;     /* chart teal */
+  --bg: #ffffff;         /* white so chart backgrounds blend in */
+  --text-width: 680px;   /* comfortable reading width */
+  --page-width: 1120px;  /* widest a chart can go */
 }
 
-/* Ensure full width on tablet and mobile viewports */
-@media(max-width: 980px) {
-  .span-3 {
-    grid-column: span 2;
-  }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-@media(max-width: 620px) {
-  .span-3 {
-    grid-column: auto;
-  }
+p { margin: 0 0 1em; }
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 96px 24px 40px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.subtitle {
+  margin: 14px 0 18px;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.intro {
+  max-width: var(--text-width);
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+/* ---------- Story flow ---------- */
+
+main {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+.story { padding: 40px 0 24px; }
+
+.lead {
+  max-width: var(--text-width);
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 40px;
+}
+
+.source,
+figcaption {
+  font-size: 0.8rem;
+  color: var(--faint);
+  margin: 12px 0 0;
+}
+
+/* ---------- Headline numbers ---------- */
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 72px;
+}
+
+.stat-value {
+  margin: 0;
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.stat-note {
+  margin: 8px 0 0;
+  max-width: 260px;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+/* ---------- Charts ---------- */
+
+.chart { margin: 0 0 72px; }
+
+.chart h3 {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.chart-question {
+  margin: 0 0 18px;
+  font-size: 0.98rem;
+  color: var(--muted);
+}
+
+.chart-slot {
+  width: 100%;
+  min-height: 240px;
+  overflow-x: auto;              /* wide charts scroll on small screens instead of breaking the page */
+}
+.chart-tall { min-height: 340px; }
+
+/* Centre fixed-width charts; container-width charts still fill the slot. */
+.chart-slot.vega-embed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chart-slot.vega-embed > svg,
+.chart-slot.vega-embed > canvas { max-width: none; }
+.vega-embed details { display: none; }
+
+/* Dropdowns / radio buttons that Vega adds under a chart */
+.vega-bindings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  margin-top: 10px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.vega-bind-name { margin-right: 6px; font-weight: 500; }
+.vega-bindings select {
+  font: inherit;
+  color: var(--ink);
+  padding: 4px 26px 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+.vega-bindings input[type="radio"] { accent-color: var(--accent); }
+.vega-bindings label { margin-right: 10px; }
+
+/* Two charts side by side on wide screens */
+.pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56px;
+}
+
+/* Vega tooltip in the same font */
+#vg-tooltip-element {
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 12px;
+}
+
+/* ---------- Conclusion ---------- */
+
+.pull-quote {
+  max-width: 820px;
+  margin: 8px 0 28px;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.site-footer p { max-width: var(--text-width); }
+.site-footer strong { color: var(--ink); }
+.source-links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 16px 0; }
+.footer-small { font-size: 0.75rem; color: var(--faint); }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1080px) {
+  .pair { grid-template-columns: 1fr; gap: 0; }
+}
+
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .site-header { padding: 56px 18px 24px; }
+  main { padding: 0 18px 40px; }
+  .story { padding: 24px 0 8px; }
+  .chart { margin-bottom: 52px; }
+  .chart-tall { min-height: 260px; }
 }

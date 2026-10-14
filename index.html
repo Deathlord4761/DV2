@@ -7,82 +7,138 @@
   <meta name="description" content="An interactive visual story about Australian household expenditure, regional differences and living costs.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
+
 <header class="site-header">
-  <div class="header-inner">
-    <h1>The Cost of Living</h1>
-    <p class="subtitle">Snapshot into Household Spending</p>
-    <p class="intro">Where household money goes, how spending changes, and why everyday costs look different across places and generations.</p>
-  </div>
+  <h1>The Cost of Living</h1>
+  <p class="subtitle">A snapshot into household spending in Australia</p>
+  <p class="intro">Where household money goes, how spending changes, and why everyday costs look different across places and generations.</p>
 </header>
 
-<main class="page-wrap">
-  <section class="story-section" id="overview">
-    <div class="section-heading"><span class="section-number">01</span><div><p class="section-kicker">The big picture</p><h2>What does it cost to live?</h2></div></div>
-    <p class="section-lead">Household expenditure reflects the essentials people need, the choices they make, and the prices they face. Begin with the national picture, then zoom in on categories, regions and housing costs.</p>
-    <div class="three-col">
-      <article class="stat-card"><p class="stat-label">Latest populated ABS headline</p><p class="stat-value">+1.1%</p><p class="stat-note">Australian household spending, July 2026 month-on-month change.</p><span class="source-tag">ABS · July 2026</span></article>
-      <article class="stat-card"><p class="stat-label">Victoria</p><p class="stat-value">+1.3%</p><p class="stat-note">State household spending, July 2026 month-on-month change.</p><span class="source-tag">ABS · July 2026</span></article>
+<main>
+
+  <!-- The big picture -->
+  <section class="story" id="overview">
+    <p class="lead">Household expenditure reflects the essentials people need, the choices they make, and the prices they face. Begin with the national picture, then zoom in on categories, regions and housing costs.</p>
+    <div class="stats">
+      <div class="stat">
+        <p class="stat-value">+1.1%</p>
+        <p class="stat-note">Australian household spending, July 2026, month-on-month</p>
+      </div>
+      <div class="stat">
+        <p class="stat-value">+1.3%</p>
+        <p class="stat-note">Victorian household spending, July 2026, month-on-month</p>
+      </div>
+    </div>
+    <p class="source">Source: ABS Monthly Household Spending Indicator, July 2026</p>
+  </section>
+
+  <!-- Geography -->
+  <section class="story" id="where">
+    <p class="lead">Spending doesn't move in step across the country. Use the month selector to see where household spending rose or fell.</p>
+
+    <figure class="chart">
+      <h3>Monthly change in household spending by state</h3>
+      <p class="chart-question">Where has spending increased or decreased?</p>
+      <div id="chart-map-1a" class="chart-slot chart-tall"></div>
+    </figure>
+
+    <figure class="chart">
+      <h3>How each spending category changed by state</h3>
+      <p class="chart-question">Which categories drive differences between states?</p>
+      <div id="chart-heatmap" class="chart-slot"></div>
+    </figure>
+  </section>
+
+  <!-- Categories and composition -->
+  <section class="story" id="categories">
+    <p class="lead">Over ten years, every part of the household budget has grown, but not at the same pace. And where you live changes what you spend on.</p>
+
+    <div class="pair">
+      <figure class="chart">
+        <h3>Ten years of household spending</h3>
+        <p class="chart-question">Which types of spending grew fastest since 2016?</p>
+        <div id="chart-slope" class="chart-slot chart-tall"></div>
+        <figcaption>Source: ABS Monthly Household Spending Indicator, August 2016 and August 2026.</figcaption>
+      </figure>
+
+      <figure class="chart">
+        <h3>Greater capital city vs rest of state</h3>
+        <p class="chart-question">Which categories contribute most to the gap?</p>
+        <div id="chart-butterfly" class="chart-slot"></div>
+        <figcaption>Source: ABS Household Expenditure Survey, 2015–16.</figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="story-section" id="where">
-    <div class="section-heading"><span class="section-number">02</span><div><p class="section-kicker">Geography</p><h2>Where is spending changing?</h2></div></div>
-    <p class="section-lead">Use the month selector to explore the state-level pattern. The second supplied map is included separately; both map files currently use the same geographic layer and dataset.</p>
-    <div class="three-col">
-      <article class="chart-card span-3"><div class="card-heading"><div><h3>Australian spending change monthly by state</h3></div><span ></span></div><p class="chart-question">Where has spending increased or decreased?</p><div id="chart-map-1a" class="chart-slot chart-tall"></div></article>
-      <article class="chart-card span-3"><div class="card-heading"><div><h3>Australian States and how each spending category changes</h3></div></div><p class="chart-question">Which categories drive differences between states?</p><div id="chart-heatmap" class="chart-slot"></div><p class="chart-caption"></article>
-    </div>
+  <!-- People and households -->
+  <section class="story" id="people">
+    <p class="lead">Age, financial stress and income all shape how a household splits its budget.</p>
+
+    <figure class="chart">
+      <h3>Generational spending</h3>
+      <p class="chart-question">How does spending differ between age groups?</p>
+      <div id="chart-radial" class="chart-slot"></div>
+      <figcaption>Source: ABS Household Expenditure Survey, 2015–16, Table 10.1.</figcaption>
+    </figure>
+
+    <figure class="chart">
+      <h3>Spending under financial stress</h3>
+      <p class="chart-question">What do households cut first when money is tight?</p>
+      <div id="chart-stress" class="chart-slot"></div>
+      <figcaption>Source: ABS Household Expenditure Survey, 2015–16.</figcaption>
+    </figure>
+
+    <figure class="chart">
+      <h3>Disposable income and household spending</h3>
+      <p class="chart-question">How much is left after the weekly spend in each state?</p>
+      <div id="chart-income-spending" class="chart-slot"></div>
+      <figcaption>Source: ABS Household Expenditure Survey, 2015–16. NT excludes very remote areas.</figcaption>
+    </figure>
   </section>
 
-  <section class="story-section" id="categories">
-    <div class="section-heading"><span class="section-number">03</span><div><p class="section-kicker">Categories and composition</p><h2>Which costs are moving?</h2></div></div>
-    <div class="three-col"></div>
-      <article class="chart-card span-2"></div><div id="chart-slope" class="chart-slot chart-tall"></div></article>
-      <article class="chart-card span-3"><div class="card-heading"><div><h3>Greater City vs Rest of State (2016)</h3></div></div><p class="chart-question">Which categories contribute most to the gap?</p><div id="chart-butterfly" class="chart-slot"></div></article>
-    </div>
+  <!-- Housing pressure -->
+  <section class="story" id="housing">
+    <p class="lead">Housing is the single biggest weekly cost, and where you live decides how big it is.</p>
+
+    <figure class="chart">
+      <h3>Rent across Victoria</h3>
+      <p class="chart-question">Where are rents higher or lower?</p>
+      <div id="chart-map-rent" class="chart-slot"></div>
+      <figcaption>Median weekly rent, December 2024. LGAs left blank have no data.</figcaption>
+    </figure>
+
+    <!-- Placeholder: no chart file yet. Uncomment when js/chart-housing-scatter.js exists.
+    <figure class="chart">
+      <h3>Housing costs and spending</h3>
+      <p class="chart-question">How does the relationship between housing costs and expenditure change over time?</p>
+      <div id="chart-housing-scatter" class="chart-slot"></div>
+    </figure>
+    -->
   </section>
 
-  <section class="story-section" id="people">
-    <div class="section-heading"><span class="section-number">04</span><div><p class="section-kicker">People and households</p><h2>Who spends differently?</h2></div></div>
-    <p class="section-lead">Age can reveal generational patterns.</p>
-    <div class="three-col">
-      <div id="chart-housing-map"></div>
-      <article class="chart-card span-3"><div class="card-heading"><div><h3>Generational spending</h3></div></div><p class="chart-question">How does spending differ between age groups?</p><div id="chart-radial" class="chart-slot"></div></article>
-      <article class="chart-card span-2 "><div class="card-heading"><div><h3>stress indacators effect on spending</h3></div></div><p class="chart-question">What is the effect of financial stress create variation on household expenditure?</p><div id="chart-stress" class="chart-slot"></div></article>
-      <article class="chart-card span-2"><div class="card-heading"><div><h3>expendable income houshold expenditure</h3></div></div><p class="chart-question">What is the effect of disposable income on household expenditure?</p><div id="chart-income-spending" class="chart-slot"></div><p class="chart-caption">Illustrative coordinates and values; replace with sourced suburb-level data.</p></article>
-    </div>
-  </section>
-
-  <section class="story-section" id="housing">
-    <div class="section-heading"><span class="section-number">05</span><div><p class="section-kicker">Housing pressure</p><h2>How much does location matter?</h2></div></div>
-    <div class="three-col">
-      <article class="chart-card span-3"><div class="card-heading"></span><h3>Rent across Victoria</h3></div></div><p class="chart-question">Where are rents higher or lower?</p><div id="chart-map-rent" class="chart-slot device-width"></div></article>
-      <article class="chart-card span-2"><div class="card-heading"><div><span class="chart-index">CHART 09</span><h3>Housing costs and spending</h3></div><span class="idiom">Connected scatter</span></div><p class="chart-question">How does the relationship between housing costs and expenditure change over time?</p><div id="chart-housing-scatter" class="chart-slot"></div><p class="chart-caption">Illustrative data. Match regions and time periods across both sources; describe association, not causation.</p></article>
-    </div>
-  </section>
-
-  <section class="story-section" id="conclusion">
-    <div class="section-heading"><span class="section-number">06</span><div><p class="section-kicker">Takeaways</p><h2>The cost of living is not one number</h2></div></div>
-    <div class="conclusion-grid">
-      <div><p class="pull-quote">Where people live, what they need, and which costs rise can all shape the household budget.</p><p>Use the final conclusion to summarise three evidence-backed findings: the strongest category movement, the clearest regional contrast, and how housing costs relate to expenditure. Add a source note beside each claim.</p></div>
+  <!-- Takeaways -->
+  <section class="story" id="conclusion">
+    <p class="pull-quote">The cost of living is not one number. Where people live, what they need, and which costs rise all shape the household budget.</p>
+    <p class="lead">Use the final conclusion to summarise three evidence-backed findings: the strongest category movement, the clearest regional contrast, and how housing costs relate to expenditure. Add a source note beside each claim.</p>
   </section>
 
   <footer class="site-footer">
     <p><strong>Sources and method</strong></p>
-    <p>ABS Monthly Household Spending Indicator: monthly changes at national and state/territory level. Regional spending and housing data should be taken from comparable official tables or a documented source.</p>
+    <p>ABS Monthly Household Spending Indicator: monthly changes at national and state/territory level. ABS Household Expenditure Survey 2015–16: spending by category, region, age, financial stress and income.</p>
     <div class="source-links">
       <a href="https://www.abs.gov.au/statistics/economy/finance/monthly-household-spending-indicator/latest-release" target="_blank" rel="noreferrer">ABS Monthly Household Spending Indicator ↗</a>
+      <a href="https://www.abs.gov.au/statistics/economy/finance/household-expenditure-survey-australia-summary-results" target="_blank" rel="noreferrer">ABS Household Expenditure Survey ↗</a>
       <a href="https://geografia.com.au/spendmapp/" target="_blank" rel="noreferrer">Spendmapp / Geografia ↗</a>
       <a href="https://www.dffh.vic.gov.au/publications/past-rental-reports" target="_blank" rel="noreferrer">Homes Victoria rental reports ↗</a>
     </div>
-    <p class="footer-small">Prototype for an academic data visualisation. Files labelled ILLUSTRATIVE are not official observations.</p>
+    <p class="footer-small">Prototype for an academic data visualisation.</p>
   </footer>
 </main>
 
@@ -95,7 +151,5 @@
 <script src="js/chart-radial.js"></script>
 <script src="js/chart-stress.js"></script>
 <script src="js/chart-income-spending.js"></script>
-
-
 </body>
 </html>
