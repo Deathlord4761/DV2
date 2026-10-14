@@ -1,0 +1,233 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": {
+    "step": 46
+  },
+  "data": {
+    "url": "data/dumbbell_spending_change.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "aug_2016": "number",
+        "aug_2026": "number",
+        "difference_pts": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#8c9aa0",
+        "strokeWidth": 1,
+        "strokeDash": [
+          3,
+          3
+        ]
+      },
+      "encoding": {
+        "x": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#b9c4c5",
+        "strokeWidth": 4,
+        "strokeCap": "round"
+      },
+      "encoding": {
+        "y": {
+          "field": "category",
+          "type": "ordinal",
+          "sort": [
+            "Total",
+            "Goods",
+            "Services",
+            "Discretionary",
+            "Non-discretionary"
+          ],
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "domain": false,
+            "ticks": false,
+            "labelPadding": 8,
+            "minExtent": 125
+          }
+        },
+        "x": {
+          "field": "aug_2016",
+          "type": "quantitative",
+          "title": "Change from the previous month (%)",
+          "scale": {
+            "domain": [
+              -2,
+              2.5
+            ],
+            "nice": false
+          },
+          "axis": {
+            "values": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "format": ".0f",
+            "grid": false
+          }
+        },
+        "x2": {
+          "field": "aug_2026"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "fold": [
+            "aug_2016",
+            "aug_2026"
+          ],
+          "as": [
+            "period",
+            "value"
+          ]
+        },
+        {
+          "calculate": "datum.period === 'aug_2016' ? 'August 2016' : 'August 2026'",
+          "as": "month"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 170,
+        "opacity": 1,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "y": {
+          "field": "category",
+          "type": "ordinal",
+          "sort": [
+            "Total",
+            "Goods",
+            "Services",
+            "Discretionary",
+            "Non-discretionary"
+          ],
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "domain": false,
+            "ticks": false,
+            "labelPadding": 8,
+            "minExtent": 125
+          }
+        },
+        "x": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "month",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "August 2016",
+              "August 2026"
+            ],
+            "range": [
+              "#5a7fb5",
+              "#8a4f7d"
+            ]
+          },
+          "legend": {
+            "orient": "top",
+            "direction": "horizontal",
+            "symbolSize": 170
+          }
+        },
+        "tooltip": [
+          {
+            "field": "category",
+            "type": "nominal",
+            "title": "Category"
+          },
+          {
+            "field": "month",
+            "type": "nominal",
+            "title": "Month"
+          },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "title": "Change from previous month (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "calculate": "max(datum.aug_2016, datum.aug_2026)",
+          "as": "right_end"
+        },
+        {
+          "calculate": "(datum.difference_pts > 0 ? '+' : datum.difference_pts < 0 ? '\u2212' : '') + abs(datum.difference_pts) + ' pts'",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 14,
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#1b2a2e"
+      },
+      "encoding": {
+        "y": {
+          "field": "category",
+          "type": "ordinal",
+          "sort": [
+            "Total",
+            "Goods",
+            "Services",
+            "Discretionary",
+            "Non-discretionary"
+          ],
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "domain": false,
+            "ticks": false,
+            "labelPadding": 8,
+            "minExtent": 125
+          }
+        },
+        "x": {
+          "field": "right_end",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

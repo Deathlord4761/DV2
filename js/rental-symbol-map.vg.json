@@ -1,0 +1,463 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 450,
+  "projection": {
+    "type": "mercator"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/australia-states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "victoria_view"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e3e8e8",
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "url": "data/australia-states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "rental_regions"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.geometry.coordinates[0]",
+          "as": "lon"
+        },
+        {
+          "calculate": "datum.geometry.coordinates[1]",
+          "as": "lat"
+        },
+        {
+          "calculate": "datum.properties.name",
+          "as": "region"
+        },
+        {
+          "calculate": "datum.properties.house_rent",
+          "as": "house"
+        },
+        {
+          "calculate": "datum.properties.unit_rent",
+          "as": "unit"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "fill": "#8a4f7d",
+        "fillOpacity": 0.12,
+        "stroke": "#8a4f7d",
+        "strokeWidth": 2.5
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "house",
+          "type": "quantitative",
+          "scale": {
+            "type": "linear",
+            "domain": [
+              0,
+              700
+            ],
+            "range": [
+              0,
+              1800
+            ],
+            "zero": true
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "region",
+            "type": "nominal",
+            "title": "Region"
+          },
+          {
+            "field": "house",
+            "type": "quantitative",
+            "title": "House, median weekly rent",
+            "format": "$,.0f"
+          },
+          {
+            "field": "unit",
+            "type": "quantitative",
+            "title": "Unit, median weekly rent",
+            "format": "$,.0f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/australia-states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "rental_regions"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.geometry.coordinates[0]",
+          "as": "lon"
+        },
+        {
+          "calculate": "datum.geometry.coordinates[1]",
+          "as": "lat"
+        },
+        {
+          "calculate": "datum.properties.name",
+          "as": "region"
+        },
+        {
+          "calculate": "datum.properties.house_rent",
+          "as": "house"
+        },
+        {
+          "calculate": "datum.properties.unit_rent",
+          "as": "unit"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "fill": "#0f5c63",
+        "fillOpacity": 0.92,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "unit",
+          "type": "quantitative",
+          "scale": {
+            "type": "linear",
+            "domain": [
+              0,
+              700
+            ],
+            "range": [
+              0,
+              1800
+            ],
+            "zero": true
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "region",
+            "type": "nominal",
+            "title": "Region"
+          },
+          {
+            "field": "house",
+            "type": "quantitative",
+            "title": "House, median weekly rent",
+            "format": "$,.0f"
+          },
+          {
+            "field": "unit",
+            "type": "quantitative",
+            "title": "Unit, median weekly rent",
+            "format": "$,.0f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/australia-states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "rental_regions"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.geometry.coordinates[0]",
+          "as": "lon"
+        },
+        {
+          "calculate": "datum.geometry.coordinates[1]",
+          "as": "lat"
+        },
+        {
+          "calculate": "datum.properties.name",
+          "as": "region"
+        },
+        {
+          "filter": "datum.region === 'Hume City'"
+        },
+        {
+          "calculate": "datum.region + '\\nHouse $' + datum.properties.house_rent + ', unit $' + datum.properties.unit_rent",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "color": "#1b2a2e",
+        "lineBreak": "\n",
+        "lineHeight": 15,
+        "dy": -36.230065940342065,
+        "align": "center"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/australia-states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "rental_regions"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.geometry.coordinates[0]",
+          "as": "lon"
+        },
+        {
+          "calculate": "datum.geometry.coordinates[1]",
+          "as": "lat"
+        },
+        {
+          "calculate": "datum.properties.name",
+          "as": "region"
+        },
+        {
+          "filter": "datum.region === 'City of Monash'"
+        },
+        {
+          "calculate": "datum.region + '\\nHouse $' + datum.properties.house_rent + ', unit $' + datum.properties.unit_rent",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "color": "#1b2a2e",
+        "lineBreak": "\n",
+        "lineHeight": 15,
+        "dx": 31.083560155913247,
+        "align": "left"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/australia-states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "rental_regions"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.geometry.coordinates[0]",
+          "as": "lon"
+        },
+        {
+          "calculate": "datum.geometry.coordinates[1]",
+          "as": "lat"
+        },
+        {
+          "calculate": "datum.properties.name",
+          "as": "region"
+        },
+        {
+          "filter": "datum.region === 'Geelong'"
+        },
+        {
+          "calculate": "datum.region + '\\nHouse $' + datum.properties.house_rent + ', unit $' + datum.properties.unit_rent",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "color": "#1b2a2e",
+        "lineBreak": "\n",
+        "lineHeight": 15,
+        "dy": 36.63070019821459,
+        "align": "center"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/australia-states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "rental_regions"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.geometry.coordinates[0]",
+          "as": "lon"
+        },
+        {
+          "calculate": "datum.geometry.coordinates[1]",
+          "as": "lat"
+        },
+        {
+          "calculate": "datum.properties.name",
+          "as": "region"
+        },
+        {
+          "filter": "datum.region === 'East Gipsland'"
+        },
+        {
+          "calculate": "datum.region + '\\nHouse $' + datum.properties.house_rent + ', unit $' + datum.properties.unit_rent",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "color": "#1b2a2e",
+        "lineBreak": "\n",
+        "lineHeight": 15,
+        "dy": 35.82133560667808,
+        "align": "center"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/australia-states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "rental_regions"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.geometry.coordinates[0]",
+          "as": "lon"
+        },
+        {
+          "calculate": "datum.geometry.coordinates[1]",
+          "as": "lat"
+        },
+        {
+          "calculate": "datum.properties.name",
+          "as": "region"
+        },
+        {
+          "filter": "datum.region === 'City of Melton'"
+        },
+        {
+          "calculate": "datum.region + '\\nHouse $' + datum.properties.house_rent + ', unit $' + datum.properties.unit_rent",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "color": "#1b2a2e",
+        "lineBreak": "\n",
+        "lineHeight": 15,
+        "dx": -27.3828948142077,
+        "align": "right"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
