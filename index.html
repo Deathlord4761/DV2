@@ -39,7 +39,7 @@
     <p class="section-lead">Use the month selector to explore the state-level pattern. The second supplied map is included separately; both map files currently use the same geographic layer and dataset.</p>
     <div class="three-col">
       <article class="chart-card span-3"><div class="card-heading"><div><h3>Australian spending change</h3></div><span ></span></div><p class="chart-question">Where has spending increased or decreased?</p><div id="chart-map-1a" class="chart-slot chart-tall"></div></article>
-      <article class="chart-card span-3"><div class="card-heading"><div><h3>State × category change</h3></div><span class="idiom">Heatmap</span></div><p class="chart-question">Which categories drive differences between states?</p><div id="chart-heatmap" class="chart-slot"></div><p class="chart-caption">The supplied heatmap spec is preserved. Its CSV currently contains illustrative values and must be replaced with real state-by-category observations.</p></article>
+      <article class="chart-card span-3"><div class="card-heading"><div><h3>Australian States and how each spending category changes</h3></div></div><p class="chart-question">Which categories drive differences between states?</p><div id="chart-heatmap" class="chart-slot"></div><p class="chart-caption"></article>
     </div>
   </section>
 
@@ -54,10 +54,12 @@
   </section>
 
   <section class="story-section" id="people">
+    
     <div class="section-heading"><span class="section-number">04</span><div><p class="section-kicker">People and households</p><h2>Who spends differently?</h2></div></div>
     <p class="section-lead">Age can reveal generational patterns, but if your brief requires income groups or household types, replace these examples with a source that measures those groups directly.</p>
     <div class="three-col">
-      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">CHART 07</span><h3>Generational spending</h3></div><span class="idiom">Grouped bars</span></div><p class="chart-question">How does spending differ between age groups?</p><div id="chart-age-bars" class="chart-slot"></div><p class="chart-caption">Illustrative index only.</p></article>
+      <div id="chart-housing-map"></div>
+      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">CHART 07</span><h3>Generational spending</h3></div><span class="idiom">Grouped bars</span></div><p class="chart-question">How does spending differ between age groups?</p><div id="" class="chart-slot"></div><p class="chart-caption">Illustrative index only.</p></article>
       <article class="chart-card"><div class="card-heading"><div><span class="chart-index">CHART 08</span><h3>Spending profiles</h3></div><span class="idiom">Radar-style chart</span></div><p class="chart-question">How does category composition vary by generation?</p><div id="chart-radar" class="chart-slot"></div><p class="chart-caption">The 1–5 scale is illustrative, not measured data.</p></article>
       <article class="chart-card"><div class="card-heading"><div><span class="chart-index">MAP 03</span><h3>Victorian local spending</h3></div><span class="idiom">Proportional symbols</span></div><p class="chart-question">Where is spending concentrated across suburbs?</p><div id="chart-symbol-map" class="chart-slot"></div><p class="chart-caption">Illustrative coordinates and values; replace with sourced suburb-level data.</p></article>
     </div>
@@ -66,7 +68,7 @@
   <section class="story-section" id="housing">
     <div class="section-heading"><span class="section-number">05</span><div><p class="section-kicker">Housing pressure</p><h2>How much does location matter?</h2></div></div>
     <div class="three-col">
-      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">MAP 04</span><h3>Rent across Victoria</h3></div><span class="idiom">Graduated symbols</span></div><p class="chart-question">Where are rents higher or lower?</p><div id="chart-housing-map" class="chart-slot"></div><p class="chart-caption">Current chart is a ranked symbol comparison, not a geographic map. Add coordinates and use a sourced rental table to make it a map.</p></article>
+      <article class="chart-card span-3"><div class="card-heading"><div><span class="chart-index">MAP 04</span><h3>Rent across Victoria</h3></div><span class="idiom">Graduated symbols</span></div><p class="chart-question">Where are rents higher or lower?</p><div id="chart-map-rent" class="chart-slot"></div></article>
       <article class="chart-card span-2"><div class="card-heading"><div><span class="chart-index">CHART 09</span><h3>Housing costs and spending</h3></div><span class="idiom">Connected scatter</span></div><p class="chart-question">How does the relationship between housing costs and expenditure change over time?</p><div id="chart-housing-scatter" class="chart-slot"></div><p class="chart-caption">Illustrative data. Match regions and time periods across both sources; describe association, not causation.</p></article>
     </div>
   </section>
@@ -75,7 +77,7 @@
     <div class="section-heading"><span class="section-number">06</span><div><p class="section-kicker">Takeaways</p><h2>The cost of living is not one number</h2></div></div>
     <div class="conclusion-grid">
       <div><p class="pull-quote">Where people live, what they need, and which costs rise can all shape the household budget.</p><p>Use the final conclusion to summarise three evidence-backed findings: the strongest category movement, the clearest regional contrast, and how housing costs relate to expenditure. Add a source note beside each claim.</p></div>
-      <article class="chart-card"><div class="card-heading"><div><span class="chart-index">OPTIONAL</span><h3>Common purchase themes</h3></div><span class="idiom">Word cloud</span></div><div class="word-cloud"><span>Food</span><span>Fuel</span><span>Rent</span><span>Groceries</span><span>Transport</span><span>Health</span><span>Utilities</span><span>Dining</span><span>Clothing</span></div><p class="chart-caption">Keep only if you find item-level purchase data. The ABS MHSI does not identify the most commonly purchased individual products.</p></article>
+      <article class="chart-card"><div class="card-heading"><div><span class="chart-index"></span><h3>Common purchase themes</h3></div><span class="idiom">Word cloud</span></div><div class="word-cloud"><span>Food</span><span>Fuel</span><span>Rent</span><span>Groceries</span><span>Transport</span><span>Health</span><span>Utilities</span><span>Dining</span><span>Clothing</span></div><p class="chart-caption">Keep only if you find item-level purchase data. The ABS MHSI does not identify the most commonly purchased individual products.</p></article>
     </div>
   </section>
 
@@ -94,5 +96,6 @@
 <!-- Each visualization is loaded from its own file in /js. -->
 <script src="js/map-1a.js"></script>
 <script src="js/chart-2-heatmap.js"></script>
+<script src="js/spec_map_rent.js"></script>
 </body>
 </html>

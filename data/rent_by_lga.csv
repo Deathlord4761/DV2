@@ -1,0 +1,19 @@
+LGA_NAME,region,area,unit_rent,house_rent,period
+HUME,Hume City,Greater Melbourne,450,500,Dec-24
+MONASH,City of Monash,Greater Melbourne,553,651,Dec-24
+GREATER GEELONG,Geelong,Regional Victoria,430,520,Dec-24
+EAST GIPPSLAND,East Gippsland,Regional Victoria,380,480,Dec-24
+MELTON,City of Melton,Greater Melbourne,376,459,Dec-24
+YARRA,Yarra City,Greater Melbourne,698,972,Dec-24
+KINGSTON,Kingston City,Greater Melbourne,549,701,Dec-24
+BAYSIDE,Bayside,Greater Melbourne,650,1175,Dec-24
+MELBOURNE,Melbourne,Greater Melbourne,620,793,Dec-24
+BOROONDARA,Boroondara,Greater Melbourne,607,886,Dec-24
+GLEN EIRA,Glen Eira,Greater Melbourne,580,831,Dec-24
+WYNDHAM,Wyndham,Greater Melbourne,438,477,Dec-24
+CASEY,Casey,Greater Melbourne,520,600,Dec-24
+BULOKE,Buloke Shire,Regional Victoria,292,313,Dec-24
+HINDMARSH,Hindmarsh Shire,Regional Victoria,264,298,Dec-24
+MILDURA,Mildura Rural City ,Regional Victoria,343,420,Dec-24
+SURF COAST,Surf Coast Shire,Regional Victoria,553,615,Dec-24
+TOWONG,Towong Shire,Regional Victoria,274,432,Dec-24
