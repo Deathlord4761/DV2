@@ -1,0 +1,97 @@
+region,state_name,area_type,area_label,category,cat_order,weekly_spend,share_pct,total_spend,note
+Australia,Australia,Greater capital city,All capital cities,Food & non-alcoholic drinks,1,162.88,10.6,1536.6,Food and non-alcoholic beverages minus meals out and fast foods
+Australia,Australia,Greater capital city,All capital cities,Meals out & fast food,2,92.08,6.0,1536.6,Published: ABS Table 13.3A
+Australia,Australia,Greater capital city,All capital cities,Transport,3,212.77,13.8,1536.6,ABS broad group
+Australia,Australia,Greater capital city,All capital cities,Medical care & health,4,88.85,5.8,1536.6,ABS broad group
+Australia,Australia,Greater capital city,All capital cities,Clothing & footwear,5,48.44,3.2,1536.6,ABS broad group
+Australia,Australia,Greater capital city,All capital cities,All other spending,6,931.58,60.6,1536.6,Total goods and services minus the five categories above
+Australia,Australia,Rest of state,All rest of state,Food & non-alcoholic drinks,1,144.4,11.9,1215.6,Food and non-alcoholic beverages minus meals out and fast foods
+Australia,Australia,Rest of state,All rest of state,Meals out & fast food,2,58.69,4.8,1215.6,Derived estimate: (state x state households - capital x capital households) / rest-of-state households
+Australia,Australia,Rest of state,All rest of state,Transport,3,193.94,16.0,1215.6,ABS broad group
+Australia,Australia,Rest of state,All rest of state,Medical care & health,4,69.87,5.7,1215.6,ABS broad group
+Australia,Australia,Rest of state,All rest of state,Clothing & footwear,5,35.08,2.9,1215.6,ABS broad group
+Australia,Australia,Rest of state,All rest of state,All other spending,6,713.62,58.7,1215.6,Total goods and services minus the five categories above
+Sydney,New South Wales,Greater capital city,Greater Sydney,Food & non-alcoholic drinks,1,165.08,9.7,1710.1,Food and non-alcoholic beverages minus meals out and fast foods
+Sydney,New South Wales,Greater capital city,Greater Sydney,Meals out & fast food,2,110.33,6.5,1710.1,Published: ABS Table 13.3A
+Sydney,New South Wales,Greater capital city,Greater Sydney,Transport,3,231.67,13.5,1710.1,ABS broad group
+Sydney,New South Wales,Greater capital city,Greater Sydney,Medical care & health,4,100.25,5.9,1710.1,ABS broad group
+Sydney,New South Wales,Greater capital city,Greater Sydney,Clothing & footwear,5,51.31,3.0,1710.1,ABS broad group
+Sydney,New South Wales,Greater capital city,Greater Sydney,All other spending,6,1051.46,61.5,1710.1,Total goods and services minus the five categories above
+Sydney,New South Wales,Rest of state,Rest of NSW,Food & non-alcoholic drinks,1,145.7,11.8,1232.42,Food and non-alcoholic beverages minus meals out and fast foods
+Sydney,New South Wales,Rest of state,Rest of NSW,Meals out & fast food,2,59.48,4.8,1232.42,Derived estimate: (state x state households - capital x capital households) / rest-of-state households
+Sydney,New South Wales,Rest of state,Rest of NSW,Transport,3,191.16,15.5,1232.42,ABS broad group
+Sydney,New South Wales,Rest of state,Rest of NSW,Medical care & health,4,67.38,5.5,1232.42,ABS broad group
+Sydney,New South Wales,Rest of state,Rest of NSW,Clothing & footwear,5,36.64,3.0,1232.42,ABS broad group
+Sydney,New South Wales,Rest of state,Rest of NSW,All other spending,6,732.06,59.4,1232.42,Total goods and services minus the five categories above
+Melbourne,Victoria,Greater capital city,Greater Melbourne,Food & non-alcoholic drinks,1,164.11,10.8,1517.04,Food and non-alcoholic beverages minus meals out and fast foods
+Melbourne,Victoria,Greater capital city,Greater Melbourne,Meals out & fast food,2,93.05,6.1,1517.04,Published: ABS Table 13.3A
+Melbourne,Victoria,Greater capital city,Greater Melbourne,Transport,3,221.46,14.6,1517.04,ABS broad group
+Melbourne,Victoria,Greater capital city,Greater Melbourne,Medical care & health,4,82.04,5.4,1517.04,ABS broad group
+Melbourne,Victoria,Greater capital city,Greater Melbourne,Clothing & footwear,5,51.29,3.4,1517.04,ABS broad group
+Melbourne,Victoria,Greater capital city,Greater Melbourne,All other spending,6,905.09,59.7,1517.04,Total goods and services minus the five categories above
+Melbourne,Victoria,Rest of state,Rest of Victoria,Food & non-alcoholic drinks,1,147.52,12.4,1191.3,Food and non-alcoholic beverages minus meals out and fast foods
+Melbourne,Victoria,Rest of state,Rest of Victoria,Meals out & fast food,2,61.24,5.1,1191.3,Derived estimate: (state x state households - capital x capital households) / rest-of-state households
+Melbourne,Victoria,Rest of state,Rest of Victoria,Transport,3,207.15,17.4,1191.3,ABS broad group
+Melbourne,Victoria,Rest of state,Rest of Victoria,Medical care & health,4,68.75,5.8,1191.3,ABS broad group
+Melbourne,Victoria,Rest of state,Rest of Victoria,Clothing & footwear,5,32.13,2.7,1191.3,ABS broad group
+Melbourne,Victoria,Rest of state,Rest of Victoria,All other spending,6,674.51,56.6,1191.3,Total goods and services minus the five categories above
+Brisbane,Queensland,Greater capital city,Greater Brisbane,Food & non-alcoholic drinks,1,159.49,10.8,1471.86,Food and non-alcoholic beverages minus meals out and fast foods
+Brisbane,Queensland,Greater capital city,Greater Brisbane,Meals out & fast food,2,80.04,5.4,1471.86,Published: ABS Table 13.3A
+Brisbane,Queensland,Greater capital city,Greater Brisbane,Transport,3,209.39,14.2,1471.86,ABS broad group
+Brisbane,Queensland,Greater capital city,Greater Brisbane,Medical care & health,4,81.88,5.6,1471.86,ABS broad group
+Brisbane,Queensland,Greater capital city,Greater Brisbane,Clothing & footwear,5,48.19,3.3,1471.86,ABS broad group
+Brisbane,Queensland,Greater capital city,Greater Brisbane,All other spending,6,892.87,60.7,1471.86,Total goods and services minus the five categories above
+Brisbane,Queensland,Rest of state,Rest of Queensland,Food & non-alcoholic drinks,1,140.79,11.2,1252.69,Food and non-alcoholic beverages minus meals out and fast foods
+Brisbane,Queensland,Rest of state,Rest of Queensland,Meals out & fast food,2,57.7,4.6,1252.69,Derived estimate: (state x state households - capital x capital households) / rest-of-state households
+Brisbane,Queensland,Rest of state,Rest of Queensland,Transport,3,202.03,16.1,1252.69,ABS broad group
+Brisbane,Queensland,Rest of state,Rest of Queensland,Medical care & health,4,76.68,6.1,1252.69,ABS broad group
+Brisbane,Queensland,Rest of state,Rest of Queensland,Clothing & footwear,5,32.29,2.6,1252.69,ABS broad group
+Brisbane,Queensland,Rest of state,Rest of Queensland,All other spending,6,743.2,59.3,1252.69,Total goods and services minus the five categories above
+Adelaide,South Australia,Greater capital city,Greater Adelaide,Food & non-alcoholic drinks,1,149.72,11.7,1276.11,Food and non-alcoholic beverages minus meals out and fast foods
+Adelaide,South Australia,Greater capital city,Greater Adelaide,Meals out & fast food,2,71.38,5.6,1276.11,Published: ABS Table 13.3A
+Adelaide,South Australia,Greater capital city,Greater Adelaide,Transport,3,162.63,12.7,1276.11,ABS broad group
+Adelaide,South Australia,Greater capital city,Greater Adelaide,Medical care & health,4,77.89,6.1,1276.11,ABS broad group
+Adelaide,South Australia,Greater capital city,Greater Adelaide,Clothing & footwear,5,40.84,3.2,1276.11,ABS broad group
+Adelaide,South Australia,Greater capital city,Greater Adelaide,All other spending,6,773.65,60.6,1276.11,Total goods and services minus the five categories above
+Adelaide,South Australia,Rest of state,Rest of SA,Food & non-alcoholic drinks,1,129.93,14.1,922.26,Food and non-alcoholic beverages minus meals out and fast foods
+Adelaide,South Australia,Rest of state,Rest of SA,Meals out & fast food,2,44.74,4.9,922.26,Derived estimate: (state x state households - capital x capital households) / rest-of-state households
+Adelaide,South Australia,Rest of state,Rest of SA,Transport,3,161.74,17.5,922.26,ABS broad group
+Adelaide,South Australia,Rest of state,Rest of SA,Medical care & health,4,54.26,5.9,922.26,ABS broad group
+Adelaide,South Australia,Rest of state,Rest of SA,Clothing & footwear,5,25.07,2.7,922.26,ABS broad group
+Adelaide,South Australia,Rest of state,Rest of SA,All other spending,6,506.52,54.9,922.26,Total goods and services minus the five categories above
+Perth,Western Australia,Greater capital city,Greater Perth,Food & non-alcoholic drinks,1,165.31,11.4,1450.84,Food and non-alcoholic beverages minus meals out and fast foods
+Perth,Western Australia,Greater capital city,Greater Perth,Meals out & fast food,2,74.46,5.1,1450.84,Published: ABS Table 13.3A
+Perth,Western Australia,Greater capital city,Greater Perth,Transport,3,185.26,12.8,1450.84,ABS broad group
+Perth,Western Australia,Greater capital city,Greater Perth,Medical care & health,4,99.08,6.8,1450.84,ABS broad group
+Perth,Western Australia,Greater capital city,Greater Perth,Clothing & footwear,5,41.62,2.9,1450.84,ABS broad group
+Perth,Western Australia,Greater capital city,Greater Perth,All other spending,6,885.11,61.0,1450.84,Total goods and services minus the five categories above
+Perth,Western Australia,Rest of state,Rest of WA,Food & non-alcoholic drinks,1,167.03,12.4,1342.41,Food and non-alcoholic beverages minus meals out and fast foods
+Perth,Western Australia,Rest of state,Rest of WA,Meals out & fast food,2,60.79,4.5,1342.41,Derived estimate: (state x state households - capital x capital households) / rest-of-state households
+Perth,Western Australia,Rest of state,Rest of WA,Transport,3,165.64,12.3,1342.41,ABS broad group
+Perth,Western Australia,Rest of state,Rest of WA,Medical care & health,4,78.12,5.8,1342.41,ABS broad group
+Perth,Western Australia,Rest of state,Rest of WA,Clothing & footwear,5,41.96,3.1,1342.41,ABS broad group
+Perth,Western Australia,Rest of state,Rest of WA,All other spending,6,828.87,61.7,1342.41,Total goods and services minus the five categories above
+Hobart,Tasmania,Greater capital city,Greater Hobart,Food & non-alcoholic drinks,1,151.42,11.8,1281.99,Food and non-alcoholic beverages minus meals out and fast foods
+Hobart,Tasmania,Greater capital city,Greater Hobart,Meals out & fast food,2,71.59,5.6,1281.99,Published: ABS Table 13.3A
+Hobart,Tasmania,Greater capital city,Greater Hobart,Transport,3,192.4,15.0,1281.99,ABS broad group
+Hobart,Tasmania,Greater capital city,Greater Hobart,Medical care & health,4,73.93,5.8,1281.99,ABS broad group
+Hobart,Tasmania,Greater capital city,Greater Hobart,Clothing & footwear,5,43.17,3.4,1281.99,ABS broad group
+Hobart,Tasmania,Greater capital city,Greater Hobart,All other spending,6,749.48,58.5,1281.99,Total goods and services minus the five categories above
+Hobart,Tasmania,Rest of state,Rest of Tasmania,Food & non-alcoholic drinks,1,130.43,12.8,1020,Food and non-alcoholic beverages minus meals out and fast foods
+Hobart,Tasmania,Rest of state,Rest of Tasmania,Meals out & fast food,2,50.74,5.0,1020,Derived estimate: (state x state households - capital x capital households) / rest-of-state households
+Hobart,Tasmania,Rest of state,Rest of Tasmania,Transport,3,160.33,15.7,1020,ABS broad group
+Hobart,Tasmania,Rest of state,Rest of Tasmania,Medical care & health,4,68.94,6.8,1020,ABS broad group
+Hobart,Tasmania,Rest of state,Rest of Tasmania,Clothing & footwear,5,39.02,3.8,1020,ABS broad group
+Hobart,Tasmania,Rest of state,Rest of Tasmania,All other spending,6,570.54,55.9,1020,Total goods and services minus the five categories above
+Darwin,Northern Territory,Greater capital city,Greater Darwin,Food & non-alcoholic drinks,1,170.47,10.3,1649.32,Food and non-alcoholic beverages minus meals out and fast foods
+Darwin,Northern Territory,Greater capital city,Greater Darwin,Meals out & fast food,2,85.81,5.2,1649.32,Published: ABS Table 13.3A
+Darwin,Northern Territory,Greater capital city,Greater Darwin,Transport,3,193.81,11.8,1649.32,ABS broad group
+Darwin,Northern Territory,Greater capital city,Greater Darwin,Medical care & health,4,85.03,5.2,1649.32,ABS broad group
+Darwin,Northern Territory,Greater capital city,Greater Darwin,Clothing & footwear,5,26,1.6,1649.32,ABS broad group
+Darwin,Northern Territory,Greater capital city,Greater Darwin,All other spending,6,1088.2,66.0,1649.32,Total goods and services minus the five categories above
+Canberra,Australian Capital Territory,Greater capital city,Canberra (whole ACT),Food & non-alcoholic drinks,1,170.07,10.2,1670.19,Food and non-alcoholic beverages minus meals out and fast foods
+Canberra,Australian Capital Territory,Greater capital city,Canberra (whole ACT),Meals out & fast food,2,100.82,6.0,1670.19,Published: ABS Table 13.3A
+Canberra,Australian Capital Territory,Greater capital city,Canberra (whole ACT),Transport,3,225.24,13.5,1670.19,ABS broad group
+Canberra,Australian Capital Territory,Greater capital city,Canberra (whole ACT),Medical care & health,4,92.45,5.5,1670.19,ABS broad group
+Canberra,Australian Capital Territory,Greater capital city,Canberra (whole ACT),Clothing & footwear,5,54.83,3.3,1670.19,ABS broad group
+Canberra,Australian Capital Territory,Greater capital city,Canberra (whole ACT),All other spending,6,1026.78,61.5,1670.19,Total goods and services minus the five categories above

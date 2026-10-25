@@ -56,6 +56,23 @@
     </figure>
   </section>
 
+
+   <figure class="chart">
+      <h3>Housing costs and spending</h3>
+      <p class="chart-question">How does the relationship between housing costs and expenditure change over time?</p>
+      <div id="chart-dot-map" class="chart-slot"></div>
+    </figure>
+  </section>
+
+
+  <figure class="chart">
+      <h3>Housing costs and spending</h3>
+      <p class="chart-question">How does the relationship between housing costs and expenditure change over time?</p>
+      <div id="chart-housing-scatter" class="chart-slot"></div>
+    </figure>
+  </section>
+
+
   <!-- Categories and composition -->
   <section class="story" id="categories">
     <p class="lead">Over ten years, every part of the household budget has grown, but not at the same pace. And where you live changes what you spend on.</p>
@@ -74,6 +91,13 @@
         <div id="chart-butterfly" class="chart-slot"></div>
         <figcaption>Source: ABS Household Expenditure Survey, 2015–16.</figcaption>
       </figure>
+
+      <figure class="chart">
+        <h3>Spending Percentage by Melbourne vs Greater Melbourne Region</h3>
+        <p class="chart-question">Which categories contribute most to the gap?</p>
+        <div id="chart-pie-map-aus" class="chart-slot"></div>
+        <figcaption>Source: ABS Household Expenditure Survey, 2015–16.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -84,7 +108,7 @@
     <figure class="chart">
       <h3>Generational spending</h3>
       <p class="chart-question">How does spending differ between age groups?</p>
-      <div id="chart-radial" class="chart-slot"></div>
+      <div id="chart-age-bump" class="chart-slot"></div>
       <figcaption>Source: ABS Household Expenditure Survey, 2015–16, Table 10.1.</figcaption>
     </figure>
 
@@ -114,15 +138,15 @@
       <figcaption>Median weekly rent, December 2024. LGAs left blank have no data.</figcaption>
     </figure>
 
-    <!-- Placeholder: no chart file yet. Uncomment when js/chart-housing-scatter.js exists.
+
     <figure class="chart">
       <h3>Housing costs and spending</h3>
       <p class="chart-question">How does the relationship between housing costs and expenditure change over time?</p>
-      <div id="chart-housing-scatter" class="chart-slot"></div>
+      <div id="chart-category-rank" class="chart-slot"></div>
     </figure>
-    -->
-  </section>
 
+
+   
   <!-- Takeaways -->
   <section class="story" id="conclusion">
     <p class="pull-quote">The cost of living is not one number. Where people live, what they need, and which costs rise all shape the household budget.</p>
@@ -148,8 +172,14 @@
 <script src="js/spec_map_rent.js"></script>
 <script src="js/chart-slope.js"></script>
 <script src="js/chart-butterfly.js"></script>
-<script src="js/chart-radial.js"></script>
+<script src="js/chart-age-bump.js"></script>
 <script src="js/chart-stress.js"></script>
 <script src="js/chart-income-spending.js"></script>
+<script src="js/chart-pie-map-aus.js"></script>
+<script src="js/chart-dot-map.js"></script>
+<script src="js/chart-category-rank.js"></script>
+<script src="js/chart-housing-scatter.js"></script>
+
+
 </body>
 </html>
