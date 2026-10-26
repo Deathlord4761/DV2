@@ -11,7 +11,7 @@ const spec_chart_2_heatmap = {
   "params": [
     {
       "name": "month",
-      "value": "Aug 2026",
+      "value": "Jul 2026",
       "bind": {
         "input": "select",
         "options": [

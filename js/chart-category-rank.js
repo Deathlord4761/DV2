@@ -86,7 +86,7 @@ const spec_chart_category_rank = {
       "params": [
         {
           "name": "focus",
-          "value": [{ "category_short": "Housing" }],
+          "value": [{ "category_short": "Food" }],
           "select": { "type": "point", "fields": ["category_short"], "on": "click", "clear": false },
           "bind": { "input": "select", "options": RANK_CATEGORIES, "name": "Highlight: " }
         }

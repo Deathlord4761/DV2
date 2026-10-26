@@ -10,7 +10,7 @@ const spec_map_1a = {
   "params": [
     {
       "name": "month",
-      "value": "2026-07-01",
+      "value": "2026-05-01",
       "bind": {
         "input": "select",
         "options": [
