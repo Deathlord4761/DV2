@@ -34,7 +34,7 @@ const STRESS_X = {
 const STRESS_COLOUR = {
   "field": "type",
   "type": "nominal",
-  "scale": { "domain": ["Basic", "Discretionary"], "range": ["#2b7a78", "#d17a36"] },
+  "scale": { "domain": ["Basic", "Discretionary"], "range": ["#2f4b7c", "#8fa3bf"] },
   "legend": { "title": null, "orient": "top", "direction": "horizontal", "labelFontSize": 11, "symbolType": "square" }
 };
 
@@ -119,7 +119,7 @@ const spec_chart_stress = {
             { "calculate": "datum.total_spend - datum.weekly_spend / 2", "as": "mid" },
             { "calculate": "format(datum.share_pct, '.0f') + '%'", "as": "share_label" }
           ],
-          "mark": { "type": "text", "fontSize": 10, "fontWeight": 600, "color": "#ffffff" },
+          "mark": { "type": "text", "fontSize": 10, "fontWeight": 700, "color": "#1b2a2e" },
           "encoding": {
             "y": { "field": "mid", "type": "quantitative" },
             "text": { "field": "share_label", "type": "nominal" },
@@ -139,7 +139,7 @@ const spec_chart_stress = {
           "transform": [
             { "pivot": "type", "value": "change_vs_none_pct", "groupby": ["stress_short", "stress_order"] }
           ],
-          "mark": { "type": "area", "color": "#d17a36", "opacity": 0.12, "interpolate": "linear" },
+          "mark": { "type": "area", "color": "#8fa3bf", "opacity": 0.2, "interpolate": "linear" },
           "encoding": {
             "x": STRESS_X,
             "y": { "field": "Basic", "type": "quantitative", "scale": STRESS_CHANGE_SCALE, "axis": STRESS_CHANGE_AXIS, "title": "% change" },

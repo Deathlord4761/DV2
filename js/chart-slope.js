@@ -57,7 +57,7 @@ const spec_chart_slope = {
       "type": "nominal",
       "scale": {
         "domain": ["Total", "Goods", "Services", "Discretionary", "Non-discretionary"],
-        "range": ["#1b2a2e", "#d17a36", "#2b7a78", "#c0562b", "#0f5c63"]
+        "range": ["#111111", "#2f4b7c", "#8fa3bf", "#2f4b7c", "#8fa3bf"]
       },
       "legend": null
     },

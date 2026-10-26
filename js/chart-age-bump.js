@@ -35,7 +35,7 @@ const AGE_CATEGORIES = [
   "Household services", "Tobacco"
 ];
 
-const AGE_FOCUS = "#0f5c63";
+const AGE_FOCUS = "#2f4b7c";
 const AGE_MUTED = "#d3dbd8";
 const AGE_W = 560;
 const AGE_ROW = 28;

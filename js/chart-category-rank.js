@@ -34,7 +34,7 @@ const RANK_CATEGORIES = [
   "Personal care", "Tobacco", "Education"
 ];
 
-const RANK_FOCUS = "#0f5c63";
+const RANK_FOCUS = "#2f4b7c";
 const RANK_MUTED = "#d3dbd8";
 const RANK_W = 560;
 const RANK_ROW = 28;
@@ -86,7 +86,7 @@ const spec_chart_category_rank = {
       "params": [
         {
           "name": "focus",
-          "value": [{ "category_short": "Food" }],
+          "value": [{ "category_short": "Housing" }],
           "select": { "type": "point", "fields": ["category_short"], "on": "click", "clear": false },
           "bind": { "input": "select", "options": RANK_CATEGORIES, "name": "Highlight: " }
         }

@@ -20,7 +20,7 @@
 const DOT_W = 430, DOT_H = 330;
 
 const DOT_CATEGORIES = ["Food (excl. meals out)", "Meals out & fast food", "Transport", "Medical care & health", "Clothing & footwear"];
-const DOT_COLOURS = ["#2b7a78", "#c0562b", "#d17a36", "#7a5c99", "#d2a24c"];
+const DOT_COLOURS = ["#117733", "#DDCC77", "#66CCEE", "#CC6677", "#882255"];
 
 // Extent of the Greater Melbourne zoom (also drawn as a dashed box on the Victoria map).
 const DOT_METRO_BOX = { "west": 144.42, "east": 146.22, "north": -37.38, "south": -38.52 };
@@ -1435,7 +1435,7 @@ function dotPanel(view) {
         "fill": {
           "field": "area",
           "type": "nominal",
-          "scale": { "domain": ["Greater Melbourne", "Rest of Victoria"], "range": ["#e3eeec", "#f4f1ec"] },
+          "scale": { "domain": ["Greater Melbourne", "Rest of Victoria"], "range": ["#ebebe6", "#f7f7f4"] },
           "legend": { "title": null, "orient": "top", "direction": "horizontal", "symbolType": "square", "labelFontSize": 11 }
         },
         "tooltip": [

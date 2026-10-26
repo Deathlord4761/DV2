@@ -106,7 +106,7 @@ const spec_chart_butterfly = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": BUTTERFLY_DATA,
   "hconcat": [
-    butterflySide("Greater capital city", "#2b7a78", "left"),
+    butterflySide("Greater capital city", "#2f4b7c", "left"),
     // Centre column: category labels.
     {
       "width": 140,
@@ -123,7 +123,7 @@ const spec_chart_butterfly = {
         "tooltip": BUTTERFLY_TOOLTIP
       }
     },
-    butterflySide("Rest of state", "#d17a36", "right")
+    butterflySide("Rest of state", "#8fa3bf", "right")
   ],
   "spacing": 0,
   "config": {

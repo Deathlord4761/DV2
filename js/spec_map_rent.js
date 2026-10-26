@@ -237,16 +237,16 @@ const spec_map_rent = {
   "hconcat": [
     {
       "vconcat": [
-        rentMapPanel("House", "house_rent", "#d17a36", "vic"),
-        rentMapPanel("House", "house_rent", "#d17a36", "metro")
+        rentMapPanel("House", "house_rent", "#2f4b7c", "vic"),
+        rentMapPanel("House", "house_rent", "#2f4b7c", "metro") 
       ],
       "spacing": 16,
       "resolve": SHARED_SIZE
     },
     {
       "vconcat": [
-        rentMapPanel("Unit", "unit_rent", "#2b7a78", "vic"),
-        rentMapPanel("Unit", "unit_rent", "#2b7a78", "metro")
+        rentMapPanel("Unit", "unit_rent", "#8fa3bf", "vic"),
+        rentMapPanel("Unit", "unit_rent", "#8fa3bf", "metro")
       ],
       "spacing": 16,
       "resolve": SHARED_SIZE

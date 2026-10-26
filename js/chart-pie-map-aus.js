@@ -82,7 +82,7 @@ const PIEAUS_CATEGORIES = [
   "Food & non-alcoholic drinks", "Meals out & fast food", "Transport",
   "Medical care & health", "Clothing & footwear", "All other spending"
 ];
-const PIEAUS_COLOURS = ["#2b7a78", "#c0562b", "#d17a36", "#7a5c99", "#d2a24c", "#e1e5e3"];
+const PIEAUS_COLOURS = ["#117733", "#DDCC77", "#66CCEE", "#CC6677", "#882255", "#e1e5e3"];
 const PIEAUS_SHORT = {
   "Food & non-alcoholic drinks": "Food", "Meals out & fast food": "Meals out", "Transport": "Transport",
   "Medical care & health": "Health", "Clothing & footwear": "Clothing"
