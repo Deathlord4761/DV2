@@ -54,24 +54,14 @@
       <p class="chart-question">Which categories drive differences between states?</p>
       <div id="chart-heatmap" class="chart-slot"></div>
     </figure>
-  </section>
 
-
-   <figure class="chart">
-      <h3>Housing costs and spending</h3>
-      <p class="chart-question">How does the relationship between housing costs and expenditure change over time?</p>
+    <figure class="chart">
+      <h3>Where Victorian households spend</h3>
+      <p class="chart-question">How much is spent each week in Greater Melbourne compared with the rest of Victoria?</p>
       <div id="chart-dot-map" class="chart-slot"></div>
+      <figcaption>One dot = $1 million of household spending per week. Source: ABS Household Expenditure Survey, 2015–16.</figcaption>
     </figure>
   </section>
-
-
-  <figure class="chart">
-      <h3>Housing costs and spending</h3>
-      <p class="chart-question">How does the relationship between housing costs and expenditure change over time?</p>
-      <div id="chart-housing-scatter" class="chart-slot"></div>
-    </figure>
-  </section>
-
 
   <!-- Categories and composition -->
   <section class="story" id="categories">
@@ -91,14 +81,21 @@
         <div id="chart-butterfly" class="chart-slot"></div>
         <figcaption>Source: ABS Household Expenditure Survey, 2015–16.</figcaption>
       </figure>
-
-      <figure class="chart">
-        <h3>Spending Percentage by Melbourne vs Greater Melbourne Region</h3>
-        <p class="chart-question">Which categories contribute most to the gap?</p>
-        <div id="chart-pie-map-aus" class="chart-slot"></div>
-        <figcaption>Source: ABS Household Expenditure Survey, 2015–16.</figcaption>
-      </figure>
     </div>
+
+    <figure class="chart">
+      <h3>Capital city vs rest of state</h3>
+      <p class="chart-question">How does the split of the household budget differ between each capital and the rest of its state?</p>
+      <div id="chart-pie-map-aus" class="chart-slot"></div>
+      <figcaption>Source: ABS Household Expenditure Survey, 2015–16.</figcaption>
+    </figure>
+
+    <figure class="chart">
+      <h3>Which categories households spend most on</h3>
+      <p class="chart-question">How has the ranking of spending categories changed from 1984 to 2015–16?</p>
+      <div id="chart-category-rank" class="chart-slot"></div>
+      <figcaption>Source: ABS Household Expenditure Survey, 1984 to 2015–16.</figcaption>
+    </figure>
   </section>
 
   <!-- People and households -->
@@ -134,19 +131,19 @@
     <figure class="chart">
       <h3>Rent across Victoria</h3>
       <p class="chart-question">Where are rents higher or lower?</p>
+      <!-- id must be "chart-map-rent": that is the element js/spec_map_rent.js draws into -->
       <div id="chart-map-rent" class="chart-slot"></div>
       <figcaption>Median weekly rent, December 2024. LGAs left blank have no data.</figcaption>
     </figure>
 
-
     <figure class="chart">
       <h3>Housing costs and spending</h3>
       <p class="chart-question">How does the relationship between housing costs and expenditure change over time?</p>
-      <div id="chart-category-rank" class="chart-slot"></div>
+      <div id="chart-housing-scatter" class="chart-slot"></div>
+      <figcaption>Source: ABS Household Expenditure Survey, 1984 to 2015–16. Dollars not adjusted for inflation.</figcaption>
     </figure>
+  </section>
 
-
-   
   <!-- Takeaways -->
   <section class="story" id="conclusion">
     <p class="pull-quote">The cost of living is not one number. Where people live, what they need, and which costs rise all shape the household budget.</p>
@@ -179,7 +176,5 @@
 <script src="js/chart-dot-map.js"></script>
 <script src="js/chart-category-rank.js"></script>
 <script src="js/chart-housing-scatter.js"></script>
-
-
 </body>
 </html>

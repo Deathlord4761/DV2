@@ -136,11 +136,11 @@ function rentMapPanel(housing, field, colour, view) {
         "size": {
           "field": "rent",
           "type": "quantitative",
-          "scale": { "domain": [350, 1200], "range": [40, 900] },
+          "scale": { "domain": [0, 1200], "range": [0, 900] },
           "legend": {
             "title": "Median weekly rent (AUD)",
             "format": "$,.0f",
-            "values": [400, 600, 800, 1000, 1200],
+            "values": [300, 600, 900, 1200],
             "symbolFillColor": "#9aa6a1",
             "symbolStrokeColor": "#ffffff"
           }
