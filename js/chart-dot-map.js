@@ -1,5 +1,6 @@
 // Household spending dot-density map – Victoria, by LGA geography.
 // Keep the chart specification in this file so each visualization is modular.
+// The chart title and subtitle are in index.html (above the chart), not in the spec.
 //
 // Data
 //   data/LGA_POLYGON.json                       – Victorian LGA boundaries (all 87 drawn)
@@ -1493,16 +1494,6 @@ function dotPanel(view) {
 
 const spec_chart_dot_map = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Where Victorian households spend: one dot = $1 million a week",
-    "subtitle": "Weekly household spending on five everyday categories, 2015-16 · dots are placed at random within each area",
-    "anchor": "start",
-    "fontSize": 15,
-    "fontWeight": 600,
-    "color": "#1b2a2e",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#5b6b66"
-  },
   "params": [
     {
       "name": "dot_show",

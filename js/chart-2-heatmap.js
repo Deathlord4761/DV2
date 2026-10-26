@@ -1,8 +1,10 @@
-// Converted from your supplied Vega-Lite specification.
+// Monthly change in household spending by category and state – heatmap.
 // Keep the chart specification in this file so each visualization is modular.
+// The chart title and subtitle are in index.html (above the chart), not in the spec.
 const spec_chart_2_heatmap = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
+  "autosize": { "type": "fit-x", "contains": "padding" },
   "height": {
     "step": 34
   },
@@ -74,8 +76,11 @@ const spec_chart_2_heatmap = {
       ],
       "title": null,
       "axis": {
-        "labelLimit": 240,
-        "labelFontSize": 12,
+        // Long category names wrap onto two lines so the grid keeps room in a half-width column.
+        "labelExpr": "length(datum.label) > 22 ? [slice(datum.label, 0, indexof(datum.label, ' ', 14) > 0 ? indexof(datum.label, ' ', 14) : 22), slice(datum.label, indexof(datum.label, ' ', 14) > 0 ? indexof(datum.label, ' ', 14) + 1 : 22)] : datum.label",
+        "labelLimit": 180,
+        "labelFontSize": 11,
+        "labelLineHeight": 12,
         "domain": false,
         "ticks": false
       }
@@ -109,7 +114,7 @@ const spec_chart_2_heatmap = {
             "title": "Monthly change (%)",
             "orient": "bottom",
             "direction": "horizontal",
-            "gradientLength": 240,
+            "gradientLength": 200,
             "format": "+.0f",
             "values": [
               -4,
@@ -169,7 +174,8 @@ const spec_chart_2_heatmap = {
   "config": {
     "view": {
       "stroke": null
-    }
+    },
+    "font": "DM Sans"
   }
 };
 

@@ -1,6 +1,7 @@
 // Household spending by age – bump chart of category rankings.
 // Replaces the radial bar chart (chart-radial.js) with a form that is easier to read.
 // Keep the chart specification in this file so each visualization is modular.
+// The chart title and subtitle are in index.html (above the chart), not in the spec.
 //
 // Data: data/spending_by_age_ranked_2015_16.csv (one row per age group per category; no totals)
 //   age_group, age_order, category, category_short, cat_order, weekly_spend ($/week),
@@ -72,16 +73,6 @@ const AGE_IS_FOCUS = { "param": "focus", "empty": false };
 
 const spec_chart_age_bump = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "As households age, health climbs the budget and education falls away",
-    "subtitle": "Rank of each spending category within each age group (1 = biggest share of spending), Australia, 2015-16",
-    "anchor": "start",
-    "fontSize": 15,
-    "fontWeight": 600,
-    "color": "#1b2a2e",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#5b6b66"
-  },
   "data": AGE_DATA,
   "width": AGE_W,
   "height": AGE_ROW * 14,

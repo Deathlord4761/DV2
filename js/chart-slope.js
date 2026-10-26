@@ -1,5 +1,6 @@
 // Household spending by category: August 2016 vs August 2026 – slope chart.
 // Keep the chart specification in this file so each visualization is modular.
+// The chart title and subtitle are in index.html (above the chart), not in the spec.
 //
 // Data: data/category_change_2016_2026.csv
 //   category, breakdown, date, spending_m (monthly spending, $ million, current prices), change_pct_10y
@@ -9,17 +10,8 @@
 // drawn with different line styles (solid / dashed) and Total as a thick dark reference line.
 const spec_chart_slope = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Ten years of household spending",
-    "subtitle": "Monthly spending, Australia · current prices · Aug 2016 vs Aug 2026 · % = change over 10 years",
-    "anchor": "start",
-    "fontSize": 15,
-    "fontWeight": 600,
-    "color": "#1b2a2e",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#5b6b66"
-  },
   "width": "container",
+  "autosize": { "type": "fit-x", "contains": "padding" },
   "height": 420,
   "data": {
     "url": "data/category_change_2016_2026.csv",
@@ -95,7 +87,8 @@ const spec_chart_slope = {
             "direction": "horizontal",
             "labelFontSize": 11,
             "symbolStrokeColor": "#5b6b66",
-            "values": ["Goods vs services", "Discretionary vs non-discretionary"]
+            "values": ["Goods vs services", "Discretionary vs non-discretionary"],
+            "labelLimit": 320
           }
         },
         "strokeWidth": {

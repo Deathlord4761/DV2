@@ -1,5 +1,6 @@
 // Household spending under financial stress – linked stacked bars + connected dot plot.
 // Keep the chart specification in this file so each visualization is modular.
+// The chart title and subtitle are in index.html (above the chart), not in the spec.
 //
 // Data: data/spending_by_financial_stress_2015_16.csv (one row per stress level per spending type)
 //   stress_level, stress_short, stress_order, type (Basic | Discretionary), weekly_spend ($/week),
@@ -69,16 +70,6 @@ const STRESS_CHANGE_AXIS = {
 
 const spec_chart_stress = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Under financial stress, the extras are cut first",
-    "subtitle": "Average weekly household spending by number of financial stress indicators, Australia, 2015-16",
-    "anchor": "start",
-    "fontSize": 15,
-    "fontWeight": 600,
-    "color": "#1b2a2e",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#5b6b66"
-  },
   "data": STRESS_DATA,
   "hconcat": [
     // A. Stacked bars: the size and split of the weekly budget.

@@ -145,15 +145,13 @@ const PIEAUS_POS = {
 
 const spec_chart_pie_map_aus = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  // Title/subtitle are in index.html. Only the note for some selections stays here.
   "title": {
-    "text": "Where the household budget goes: capital city vs rest of state",
-    "subtitle": { "expr": "'Share of total weekly spending on goods and services, 2015-16' + (isValid(" + PIEAUS_NOTE_EXPR + ") ? ' · ' + " + PIEAUS_NOTE_EXPR + " : '')" },
+    "text": { "expr": "isValid(" + PIEAUS_NOTE_EXPR + ") ? " + PIEAUS_NOTE_EXPR + " : ''" },
     "anchor": "start",
-    "fontSize": 15,
-    "fontWeight": 600,
-    "color": "#1b2a2e",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#5b6b66"
+    "fontSize": 11,
+    "fontWeight": 400,
+    "color": "#5b6b66"
   },
   "width": PIEAUS_W,
   "height": PIEAUS_H,

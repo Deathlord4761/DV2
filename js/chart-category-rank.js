@@ -1,5 +1,6 @@
 // Household spending categories ranked over time – bump chart, Australia 1984 to 2015-16.
 // Keep the chart specification in this file so each visualization is modular.
+// The chart title and subtitle are in index.html (above the chart), not in the spec.
 //
 // Data: data/category_rank_1984_2016.csv (one row per survey per category; no totals)
 //   survey, year_order, category, category_short, weekly_spend ($/week, not adjusted for inflation),
@@ -70,16 +71,6 @@ const RANK_IS_FOCUS = { "param": "focus", "empty": false };
 
 const spec_chart_category_rank = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Housing has become the biggest household expense",
-    "subtitle": "Rank of each spending category in each ABS survey (1 = biggest share of spending), Australia, 1984 to 2015-16",
-    "anchor": "start",
-    "fontSize": 15,
-    "fontWeight": 600,
-    "color": "#1b2a2e",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#5b6b66"
-  },
   "data": RANK_DATA,
   "width": RANK_W,
   "height": RANK_ROW * 14,

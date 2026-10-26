@@ -1,8 +1,11 @@
-// Converted from your supplied Vega-Lite specification.
+// Monthly change in household spending by state – choropleth map.
 // Keep the chart specification in this file so each visualization is modular.
+// The chart title and subtitle are in index.html (above the chart). The small heading inside the
+// chart shows the month currently selected.
 const spec_map_1a = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
+  "autosize": { "type": "fit-x", "contains": "padding" },
   "height": 340,
   "params": [
     {
@@ -31,7 +34,7 @@ const spec_map_1a = {
       "expr": "{'2026-05-01':'May 2026', '2026-06-01':'Jun 2026','2026-07-01':'Jul 2026','2026-08-01':'Aug 2026'}[month]"
     },
     "anchor": "start",
-    "fontSize": 15,
+    "fontSize": 13,
     "fontWeight": 600,
     "color": "#1b2a2e"
   },
@@ -113,7 +116,7 @@ const spec_map_1a = {
             "title": "Monthly change (%)",
             "orient": "bottom",
             "direction": "horizontal",
-            "gradientLength": 220,
+            "gradientLength": 200,
             "format": "+.1f",
             "values": [
               -2,
@@ -243,7 +246,8 @@ const spec_map_1a = {
   "config": {
     "view": {
       "stroke": null
-    }
+    },
+    "font": "DM Sans"
   }
 };
 

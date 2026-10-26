@@ -1,5 +1,6 @@
 // Median weekly rent – proportional symbol maps (House vs Unit), Victoria by LGA.
 // Keep the chart specification in this file so each visualization is modular.
+// The chart title and subtitle are in index.html (above the chart), not in the spec.
 //
 // No data is embedded here. Everything is joined on LGA_NAME (upper case, as in the TopoJSON):
 //   data/LGA_POLYGON.json   – LGA boundaries (all 87 Victorian LGAs are drawn)
@@ -41,6 +42,11 @@ function rentMapPanel(housing, field, colour, view) {
         "key": "LGA_NAME",
         "fields": ["lon", "lat", "label_lon", "label_lat"]
       }
+    },
+    // Does this LGA have its own label position (different from the circle position)?
+    {
+      "calculate": "isValid(datum.label_lon) && (abs(datum.label_lon - datum.lon) > 0.0001 || abs(datum.label_lat - datum.lat) > 0.0001)",
+      "as": "has_label_pos"
     }
   ];
 
@@ -109,7 +115,7 @@ function rentMapPanel(housing, field, colour, view) {
     // 3. Leader lines from each symbol to its label.
     {
       "data": { "url": RENT_CSV, "format": RENT_FORMAT },
-      "transform": [...rentWithPositions, { "filter": labelFilter }],
+      "transform": [...rentWithPositions, { "filter": labelFilter }, { "filter": "datum.has_label_pos" }],
       "mark": { "type": "rule", "color": "#9aa6a1", "strokeWidth": 0.8, "clip": true },
       "encoding": {
         "longitude": { "field": "lon", "type": "quantitative" },
@@ -136,6 +142,8 @@ function rentMapPanel(housing, field, colour, view) {
         "size": {
           "field": "rent",
           "type": "quantitative",
+          // Starts at $0 so circle AREA is proportional to rent, and rents under $350
+          // (e.g. Hindmarsh, Buloke, Towong) still get a circle instead of a negative size.
           "scale": { "domain": [0, 1200], "range": [0, 900] },
           "legend": {
             "title": "Median weekly rent (AUD)",
@@ -155,28 +163,44 @@ function rentMapPanel(housing, field, colour, view) {
         ]
       }
     },
-    // 5. Labels: region name + rent.
+    // 5a. Labels with their own position (joined to the circle by a leader line).
     {
       "data": { "url": RENT_CSV, "format": RENT_FORMAT },
       "transform": [
         ...rentWithPositions,
         { "filter": labelFilter },
-        { "calculate": "datum.region + '\\n' + format(datum.rent, '$,.0f')", "as": "label" }
+        { "filter": "datum.has_label_pos" },
+        { "calculate": "[datum.region, format(datum.rent, '$,.0f')]", "as": "label" }
       ],
       "mark": {
-        "type": "text",
-        "fontSize": 10,
-        "fontWeight": "bold",
-        "color": "#27332f",
-        "lineBreak": "\n",
-        "align": "center",
-        "baseline": "middle",
-        "clip": true
+        "type": "text", "fontSize": 10, "fontWeight": "bold", "color": "#27332f",
+        "align": "center", "baseline": "middle", "lineHeight": 12,
+        "clip": isMetro   // clip only in the zoomed panel, so Victoria labels near the edge aren't cut off
       },
       "encoding": {
         "longitude": { "field": "label_lon", "type": "quantitative" },
         "latitude": { "field": "label_lat", "type": "quantitative" },
-        "text": { "field": "label", "type": "nominal" }
+        "text": { "field": "label" }
+      }
+    },
+    // 5b. Labels without their own position: placed just below the circle instead of on top of it.
+    {
+      "data": { "url": RENT_CSV, "format": RENT_FORMAT },
+      "transform": [
+        ...rentWithPositions,
+        { "filter": labelFilter },
+        { "filter": "!datum.has_label_pos" },
+        { "calculate": "[datum.region, format(datum.rent, '$,.0f')]", "as": "label" }
+      ],
+      "mark": {
+        "type": "text", "fontSize": 10, "fontWeight": "bold", "color": "#27332f",
+        "align": "center", "baseline": "top", "dy": 13, "lineHeight": 12,
+        "clip": isMetro
+      },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "text": { "field": "label" }
       }
     }
   );
@@ -210,10 +234,6 @@ const SHARED_SIZE = { "scale": { "size": "shared" }, "legend": { "size": "shared
 
 const spec_map_rent = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Median weekly rent by Victorian LGA",
-    "subtitle": "Houses vs units · December 2024 · AUD per week · blank LGAs have no data"
-  },
   "hconcat": [
     {
       "vconcat": [

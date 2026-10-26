@@ -1,5 +1,6 @@
 // Average weekly household spending: Greater capital city vs Rest of state – butterfly chart.
 // Keep the chart specification in this file so each visualization is modular.
+// The chart title and subtitle are in index.html (above the chart), not in the spec.
 //
 // Data: data/weekly_spending_city_vs_rest_2015_16.csv (one row per category per area)
 //   rank, category, category_short, area, weekly_spend ($ per week), gap_dollars, gap_pct
@@ -103,16 +104,6 @@ function butterflySide(area, colour, side) {
 
 const spec_chart_butterfly = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Capital city households spend more on almost everything",
-    "subtitle": "Average weekly household spending, Australia, 2015-16 · Tobacco is the only category where rest of state spends more",
-    "anchor": "start",
-    "fontSize": 15,
-    "fontWeight": 600,
-    "color": "#1b2a2e",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#5b6b66"
-  },
   "data": BUTTERFLY_DATA,
   "hconcat": [
     butterflySide("Greater capital city", "#2b7a78", "left"),

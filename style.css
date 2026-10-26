@@ -105,20 +105,15 @@ h2 {
 .intro-section h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
 .body-text { color: var(--muted); }
 .callout {
-  margin-top: 18px;
-  padding: 12px 16px;
-  background: var(--panel);
-  border-left: 4px solid var(--accent);
+  margin-top: 14px;
   font-size: 0.92rem;
   color: var(--muted);
 }
+.callout strong { color: var(--accent); }
 .stat-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px var(--gap);
-  padding: 22px 24px;
-  background: var(--panel);
-  border-radius: 10px;
 }
 .stat-value {
   margin: 0;
@@ -169,11 +164,7 @@ h3 {
   gap: var(--gap);
   align-items: end;
 }
-.side-text {
-  padding: 20px 24px;
-  background: var(--panel);
-  border-radius: 10px;
-}
+.side-text { padding-bottom: 6px; }
 .side-text .fig-text { margin-top: 0; }
 
 /* Bridge sentence leading into the next section */
@@ -190,7 +181,7 @@ h3 {
 /* ---------- Vega charts ---------- */
 .chart-slot { min-width: 0; min-height: 220px; }
 .chart-tall { min-height: 320px; }
-.row-pair .chart-slot, .fig-wide .chart-slot { width: 100%; overflow-x: auto; }
+.row-pair .chart-slot, .fig-wide .chart-slot { width: 100%; }
 
 .vega-embed { width: 100%; }
 .row-side .vega-embed { width: auto; }
@@ -235,10 +226,7 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1.3fr 1fr;
   gap: var(--gap);
-  margin: 56px 0 40px;
-  padding: 28px 24px;
-  background: var(--panel);
-  border-radius: 10px;
+  margin: 64px 0 40px;
   font-size: 0.85rem;
   color: var(--muted);
 }

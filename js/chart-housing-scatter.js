@@ -1,5 +1,6 @@
 // Housing costs vs household spending over time – connected scatter plot.
 // Keep the chart specification in this file so each visualization is modular.
+// The chart title and subtitle are in index.html (above the chart), not in the spec.
 //
 // Data: data/housing_vs_spending_1984_2016.csv (one row per ABS Household Expenditure Survey)
 //   survey, year_order, total_spend (average weekly goods & services spending, $),
@@ -11,7 +12,7 @@
 // How it reads
 //   Each point is one survey. x = total weekly spending, y = weekly housing costs; the line joins the
 //   surveys in time order. The dashed lines mark a constant share of spending going on housing
-//   (10%, 15%, 20%, 25%): if the path climbs across them, housing is taking a bigger slice of the
+//   (10%, 15%, 20%, 25%, labelled with just the percentage): if the path climbs across them, housing is taking a bigger slice of the
 //   budget over time, not just growing with everything else.
 
 const HS_DATA = {
@@ -44,7 +45,7 @@ const HS_Y = {
 // Reference lines of constant housing share: housing = share × total.
 const HS_SHARES = [10, 15, 20, 25].map(s => {
   const xEnd = Math.min(HS_X_MAX, HS_Y_MAX / (s / 100));
-  return { "share": s, "x0": 0, "y0": 0, "x1": xEnd, "y1": xEnd * s / 100, "label": s + "% of spending" };
+  return { "share": s, "x0": 0, "y0": 0, "x1": xEnd, "y1": xEnd * s / 100, "lx": xEnd * 0.94, "ly": xEnd * 0.94 * s / 100, "label": s + "%" };
 });
 
 const HS_TOOLTIP = [
@@ -56,17 +57,8 @@ const HS_TOOLTIP = [
 
 const spec_chart_housing_scatter = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Housing is taking a bigger slice of a growing budget",
-    "subtitle": "Average weekly housing costs vs total household spending, Australia, ABS surveys 1984 to 2015-16 (not adjusted for inflation)",
-    "anchor": "start",
-    "fontSize": 15,
-    "fontWeight": 600,
-    "color": "#1b2a2e",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#5b6b66"
-  },
   "width": "container",
+  "autosize": { "type": "fit-x", "contains": "padding" },
   "height": 380,
   "layer": [
     // 1. Constant-share guide lines.
@@ -82,10 +74,10 @@ const spec_chart_housing_scatter = {
     },
     {
       "data": { "values": HS_SHARES },
-      "mark": { "type": "text", "align": "right", "baseline": "bottom", "dx": -4, "dy": -3, "fontSize": 10, "color": "#8a9792" },
+      "mark": { "type": "text", "align": "right", "baseline": "bottom", "dx": -2, "dy": -4, "fontSize": 11, "fontWeight": 600, "color": "#8a9792" },
       "encoding": {
-        "x": { "field": "x1", "type": "quantitative" },
-        "y": { "field": "y1", "type": "quantitative" },
+        "x": { "field": "lx", "type": "quantitative" },
+        "y": { "field": "ly", "type": "quantitative" },
         "text": { "field": "label", "type": "nominal" }
       }
     },

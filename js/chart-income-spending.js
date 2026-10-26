@@ -1,5 +1,6 @@
 // Disposable income vs spending by state – connected dot plot (dumbbell).
 // Keep the chart specification in this file so each visualization is modular.
+// The chart title and subtitle are in index.html (above the chart), not in the spec.
 //
 // Data: data/income_vs_spending_by_state_2015_16.csv (one row per state/territory + Australia)
 //   state, state_name, level (State/territory | National), disposable_income ($/week),
@@ -22,17 +23,8 @@ const INCOME_TOOLTIP = [
 
 const spec_chart_income_spending = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "What's left after the weekly spend",
-    "subtitle": "Average weekly household disposable income vs spending on goods and services, 2015-16",
-    "anchor": "start",
-    "fontSize": 15,
-    "fontWeight": 600,
-    "color": "#1b2a2e",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#5b6b66"
-  },
   "width": "container",
+  "autosize": { "type": "fit-x", "contains": "padding" },
   "height": { "step": 36 },
   "data": {
     "url": "data/income_vs_spending_by_state_2015_16.csv",
