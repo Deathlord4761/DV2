@@ -38,6 +38,13 @@
         <div class="callout">
           <strong>Important:</strong> Survey figures are from 2015–16. Monthly figures run to August 2026. Read them as separate snapshots.
         </div>
+        <!-- One colour = one meaning across every chart -->
+        <div class="colour-key">
+          <p class="key-title">How to read the colours</p>
+          <p><span class="sw" style="background:#0f5c63"></span><span class="sw" style="background:#c0562b"></span> Teal means a rise. Rust means a fall.</p>
+          <p><span class="sw" style="background:#2f4b7c"></span><span class="sw" style="background:#8fa3bf"></span> Navy and slate compare two groups.</p>
+          <p><span class="sw" style="background:#117733"></span><span class="sw" style="background:#DDCC77"></span><span class="sw" style="background:#66CCEE"></span><span class="sw" style="background:#CC6677"></span><span class="sw" style="background:#882255"></span> Each spending category keeps one colour.</p>
+        </div>
       </div>
       <div class="stat-grid">
         <div class="stat">
@@ -65,6 +72,11 @@
     <p class="kicker"><span class="num">01</span>Geography</p>
     <h2>Spending rose everywhere, then stalled</h2>
     <p class="lead">Every state spent more in July. In August, half the country cut back.</p>
+
+    <div class="story-cols">
+      <p>The ABS measures spending from bank transaction data. A rise means households spent more than last month. It does not always mean prices rose.</p>
+      <p>July 2026 was strong everywhere. The Northern Territory led with <strong>+2.2%</strong>. August then cooled. Victoria, WA, Tasmania and the ACT <strong class="hl-down">went backwards</strong>.</p>
+    </div>
 
     <!-- PAIR: title above, chart, story text below – the same in both columns. -->
     <div class="row-pair">
@@ -111,6 +123,11 @@
     <h2>Services and housing are pulling ahead</h2>
     <p class="lead">Every part of the budget has grown. Some costs grew much faster than others.</p>
 
+    <div class="story-cols">
+      <p>Total monthly spending rose <strong>63%</strong> in ten years. More households and higher prices both pushed it up. Not every cost kept the same pace.</p>
+      <p>Services grew faster than goods. Over three decades, housing costs rose <strong>six-fold</strong>. It is the story of the modern budget.</p>
+    </div>
+
     <div class="row-pair">
       <figure class="fig">
         <div class="fig-head">
@@ -127,7 +144,7 @@
           <p class="fig-sub">Is housing outgrowing the rest of the budget? Dashed lines mark a fixed share of spending.</p>
         </div>
         <div id="chart-housing-scatter" class="chart-slot"></div>
-        <p class="fig-text">Housing took <strong>13%</strong> of spending in 1984. By 2015–16 it took <strong>20%</strong>. Housing grew faster than total spending.</p>
+        <p class="fig-text">Housing took <strong>13%</strong> of spending in 1984. By 2015–16 it took <strong>20%</strong>. Housing grew faster than total spending. Costs rose from <strong>$46</strong> to <strong>$279</strong> a week.</p>
         <p class="source">Source: ABS Household Expenditure Survey, 1984 to 2015–16. Not adjusted for inflation.</p>
       </figure>
     </div>
@@ -152,6 +169,11 @@
     <p class="kicker"><span class="num">03</span>City and country</p>
     <h2>Cities spend more, regions drive more</h2>
     <p class="lead">City and country households spend differently. Cities pay more, but not on everything.</p>
+
+    <div class="story-cols">
+      <p>Capital city households spend about <strong>$325 more</strong> each week. Housing, food and recreation make up half that gap.</p>
+      <p>Regional budgets look different, not just smaller. Transport takes a bigger slice outside the cities. Longer travel distances are one likely reason.</p>
+    </div>
 
     <div class="row-pair">
       <figure class="fig">
@@ -184,7 +206,7 @@
         <div id="chart-pie-map-aus" class="chart-slot"></div>
       </div>
       <div class="side-text">
-        <p class="fig-text">Pick a city to compare. City households spend more <strong>eating out</strong>. Most regional households spend more on <strong>transport</strong>.</p>
+        <p class="fig-text">Pick a city to compare. City households spend more <strong>eating out</strong>. Most regional households spend more on <strong>transport</strong>. Adelaide shows the biggest split. Transport takes <strong>17.5%</strong> of regional SA budgets. In Adelaide it takes <strong>12.7%</strong>.</p>
         <p class="source">Source: ABS Household Expenditure Survey 2015–16.</p>
       </div>
     </figure>
@@ -197,6 +219,11 @@
     <p class="kicker"><span class="num">04</span>People</p>
     <h2>Age and stress reshape the budget</h2>
     <p class="lead">Priorities shift across a lifetime. Money worries force hard choices.</p>
+
+    <div class="story-cols">
+      <p>Housing is the top cost until age 55. Education costs peak in middle age. Older budgets lean towards food and health.</p>
+      <p>Money worries change spending. Households under stress protect essentials. Extras like eating out are cut first.</p>
+    </div>
 
     <figure class="fig fig-wide">
       <div class="fig-head">
@@ -219,7 +246,7 @@
         <div id="chart-stress" class="chart-slot"></div>
       </div>
       <div class="side-text">
-        <p class="fig-text">Signs of stress include missing a bill or meal. At four or more signs, extras fall <strong class="hl-down">49%</strong>. Essentials fall only <strong class="hl-down">29%</strong>.</p>
+        <p class="fig-text">Signs of stress include missing a bill or meal. At four or more signs, extras fall <strong class="hl-down">49%</strong>. Essentials fall only <strong class="hl-down">29%</strong>. Extras drop from <strong>$659</strong> to <strong>$339</strong> a week.</p>
         <p class="source">Source: ABS Household Expenditure Survey 2015–16.</p>
       </div>
     </figure>
@@ -232,6 +259,11 @@
     <p class="kicker"><span class="num">05</span>Housing</p>
     <h2>Location sets the price of a home</h2>
     <p class="lead">Housing is now the biggest weekly cost. Where you live sets the price.</p>
+
+    <div class="story-cols">
+      <p>Inner Melbourne and bayside suburbs cost the most. Yarra units rent for <strong>$698</strong> a week. Some regional houses rent for less than city units.</p>
+      <p>Houses and units are shown side by side. Each circle grows with the rent. The zoomed maps show crowded Melbourne suburbs.</p>
+    </div>
 
     <figure class="fig fig-wide">
       <div class="fig-head">
@@ -252,6 +284,20 @@
     <p class="kicker">Takeaways</p>
     <h2>The cost of living is not one number</h2>
     <p class="pull-quote"><strong>Housing now dominates the budget.</strong> Cities spend more, regions drive further. Age and stress reshape priorities. Your costs depend on who and where you are.</p>
+    <div class="takeaways">
+      <div>
+        <p class="kicker"><span class="num">1</span>Housing</p>
+        <p>Housing grew from <strong>13%</strong> to <strong>20%</strong> of spending. It is now our biggest weekly cost.</p>
+      </div>
+      <div>
+        <p class="kicker"><span class="num">2</span>Place</p>
+        <p>City households spend <strong>$325 more</strong> each week. Regional households give more of their budget to transport.</p>
+      </div>
+      <div>
+        <p class="kicker"><span class="num">3</span>People</p>
+        <p>Older households spend more on health. Stressed households cut extras before essentials.</p>
+      </div>
+    </div>
   </section>
 
   <!-- ===================== FOOTER: METADATA, AUTHORSHIP, AI USE ===================== -->
