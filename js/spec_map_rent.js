@@ -1,5 +1,6 @@
 // Median weekly rent – proportional symbol maps (House vs Unit), Victoria by LGA.
 // Keep the chart specification in this file so each visualization is modular.
+// Colours follow the page-wide key: two groups being compared = navy (houses) and slate (units).
 // The chart title and subtitle are in index.html (above the chart), not in the spec.
 //
 // No data is embedded here. Everything is joined on LGA_NAME (upper case, as in the TopoJSON):
@@ -116,7 +117,7 @@ function rentMapPanel(housing, field, colour, view) {
     {
       "data": { "url": RENT_CSV, "format": RENT_FORMAT },
       "transform": [...rentWithPositions, { "filter": labelFilter }, { "filter": "datum.has_label_pos" }],
-      "mark": { "type": "rule", "color": "#9aa6a1", "strokeWidth": 0.8, "clip": true },
+      "mark": { "type": "rule", "color": "#9aa6a1", "strokeWidth": 0.8, "clip": isMetro },  // Victoria map: lines can reach labels outside the state
       "encoding": {
         "longitude": { "field": "lon", "type": "quantitative" },
         "latitude": { "field": "lat", "type": "quantitative" },
@@ -238,7 +239,7 @@ const spec_map_rent = {
     {
       "vconcat": [
         rentMapPanel("House", "house_rent", "#2f4b7c", "vic"),
-        rentMapPanel("House", "house_rent", "#2f4b7c", "metro") 
+        rentMapPanel("House", "house_rent", "#2f4b7c", "metro")
       ],
       "spacing": 16,
       "resolve": SHARED_SIZE
