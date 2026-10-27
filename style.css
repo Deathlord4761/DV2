@@ -281,6 +281,7 @@ h4 {
 }
 .source-list { margin: 0; padding-left: 18px; }
 .source-list li { margin-bottom: 5px; }
+.h4-gap { margin-top: 18px; }
 .footer-small { font-size: 0.76rem; color: var(--faint); }
 
 /* ---------- Smaller screens: everything stacks into one column ---------- */

@@ -25,7 +25,7 @@
     <p class="kicker">Australian household spending</p>
     <h1>The Cost of Living:<br><span>A snapshot into Australian household spending</span></h1>
     <p class="intro">Where does the weekly budget go? It depends on place, age and income. Follow the money from states to suburbs.</p>
-    <p class="byline">By <strong>[Your name]</strong> · Published <time datetime="2026-10">October 2026</time></p>
+    <p class="byline">By <strong>Max Swann</strong> · Published <time datetime="2026-10">October 2026</time></p>
   </header>
 
   <!-- ===================== 00. UNDERSTANDING THE DATA ===================== -->
@@ -34,7 +34,7 @@
     <div class="two-col">
       <div>
         <h2>Three sources, one spending story</h2>
-        <p class="body-text">The ABS tracks monthly spending up to 2026. Its survey shows who spends what. Homes Victoria reports local rents.</p>
+        <p class="body-text">The ABS tracks monthly spending up to 2026. Its survey shows who spends what. HtAG and .id report local rents.</p>
         <div class="callout">
           <strong>Important:</strong> Survey figures are from 2015–16. Monthly figures run to August 2026. Read them as separate snapshots.
         </div>
@@ -271,7 +271,7 @@
       <div id="chart-map-rent" class="chart-slot"></div>
       <div class="two-col fig-foot">
         <p class="fig-text">Bayside houses rent for <strong>$1,175</strong> a week. East Gippsland houses rent for <strong>$480</strong>. Hover over a region for its rent.</p>
-        <p class="source">Source: Homes Victoria rental report, December 2024. Blank areas have no data.</p>
+        <p class="source">Source: HtAG Analytics and .id Atlas, median weekly rents by council, December 2024. Blank areas have no data.</p>
       </div>
     </figure>
   </section>
@@ -301,7 +301,7 @@
   <footer class="site-footer">
     <div>
       <h4>About this page</h4>
-      <p>Author: [Your name]<br>
+      <p>Author: Max Swann<br>
          Published: October 2026<br>
          FIT3179 Data Visualisation 2, Monash University</p>
       <p>Charts built with <a href="https://vega.github.io/vega-lite/" target="_blank" rel="noreferrer">Vega-Lite</a>.</p>
@@ -311,20 +311,27 @@
       <ul class="source-list">
         <li><a href="https://www.abs.gov.au/statistics/economy/finance/monthly-household-spending-indicator/latest-release" target="_blank" rel="noreferrer">ABS, Monthly Household Spending Indicator</a> (2016–2026)</li>
         <li><a href="https://www.abs.gov.au/statistics/economy/finance/household-expenditure-survey-australia-summary-results" target="_blank" rel="noreferrer">ABS, Household Expenditure Survey: Summary of Results</a> (1984–2015-16)</li>
-        <li><a href="https://www.dffh.vic.gov.au/publications/past-rental-reports" target="_blank" rel="noreferrer">Homes Victoria, Rental Report</a> (December 2024)</li>
-        <!-- Add the source + URL for each map boundary file you used: -->
-        <li>Victorian LGA boundaries: [source and URL]</li>
-        <li>Australian state boundaries: [source and URL]</li>
+        <li><a href="https://www.ceicdata.com/en/australia/household-spending-by-industry/household-spending-trend-hotels-cafes--restaurants" target="_blank" rel="noreferrer">CEIC, Australia household spending trend: hotels, cafes and restaurants</a></li>
+        <li><a href="https://www.htag.com.au/vic/vic210-monash-city/" target="_blank" rel="noreferrer">HtAG Analytics, housing and rental prices by Victorian council</a> (median weekly rents, December 2024)</li>
+        <li><a href="https://atlas.id.com.au/" target="_blank" rel="noreferrer">.id (informed decisions), Atlas</a> (median weekly rents by council)</li>
+      </ul>
+      <h4 class="h4-gap">Map boundaries</h4>
+      <ul class="source-list">
+        <li><a href="https://discover.data.vic.gov.au/dataset/vicmap-admin-local-government-area-lga-polygon-aligned-to-property" target="_blank" rel="noreferrer">Vicmap Admin, Local Government Area (LGA) polygons</a>, Victorian Government (DataVic)</li>
+        <li><a href="https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1270.0.55.001July%202016?OpenDocument" target="_blank" rel="noreferrer">ABS, Australian Statistical Geography Standard (ASGS) Volume 1</a>, state and territory boundaries, July 2016</li>
       </ul>
     </div>
     <div>
-      <h4>Use of AI</h4>
+      <h4>AI declaration </h4>
       <!-- Edit this to describe exactly how you used AI. -->
-      <p>Claude (Anthropic) was used to help write chart code, structure this page and draft text.</p>
+      <p>I used claude pro, with the assistance suggestions to improve vega lite files, to help strucutre the index html and the structure the css.style file.
+        I used data found from website like ABS and created csv files, and found topojson files for maps. I further built on the output of the structure by changing the 
+        colours, fonts and improving the formatting of the css file. I also made sure that graphs labels were visible and that the website had less issues loading.
+      </p>
       <!-- Optional licence (does not affect your mark). Delete if you don't want one. -->
-      <p class="footer-small">Text and charts © 2026 [Your name], shared under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>.</p>
+      <p class="footer-small">Text and charts © 2026 Max Swann, shared under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>.</p>
     </div>
-  </footer>
+  </footer> 
 
 </div><!-- /.page -->
 
