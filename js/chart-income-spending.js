@@ -110,7 +110,7 @@ const spec_chart_income_spending = {
           "type": "nominal",
           "scale": {
             "domain": ["Disposable income", "Spending on goods & services"],
-            "range": ["#2b7a78", "#d17a36"]
+            "range": ["#2f4b7c", "#8fa3bf"]
           },
           "legend": {
             "title": null,

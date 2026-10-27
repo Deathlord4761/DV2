@@ -41,9 +41,6 @@
         <!-- One colour = one meaning across every chart -->
         <div class="colour-key">
           <p class="key-title">How to read the colours</p>
-          <p><span class="sw" style="background:#0f5c63"></span><span class="sw" style="background:#c0562b"></span> Teal means a rise. Rust means a fall.</p>
-          <p><span class="sw" style="background:#2f4b7c"></span><span class="sw" style="background:#8fa3bf"></span> Navy and slate compare two groups.</p>
-          <p><span class="sw" style="background:#117733"></span><span class="sw" style="background:#DDCC77"></span><span class="sw" style="background:#66CCEE"></span><span class="sw" style="background:#CC6677"></span><span class="sw" style="background:#882255"></span> Each spending category keeps one colour.</p>
         </div>
       </div>
       <div class="stat-grid">
@@ -332,6 +329,8 @@
 </div><!-- /.page -->
 
 <!-- Each visualization is loaded from its own file in /js. -->
+<!-- lazy-embed.js must come first: it draws each chart only when it scrolls near the screen -->
+<script src="js/lazy-embed.js"></script>
 <script src="js/map-1a.js"></script>
 <script src="js/chart-2-heatmap.js"></script>
 <script src="js/spec_map_rent.js"></script>

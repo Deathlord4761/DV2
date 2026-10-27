@@ -167,6 +167,31 @@ h3 {
 .side-text { padding-bottom: 6px; }
 .side-text .fig-text { margin-top: 0; }
 
+/* Two story paragraphs side by side under each section lead */
+.story-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  margin: -8px 0 30px;
+}
+.story-cols p { margin: 0; font-size: 1rem; line-height: 1.65; }
+
+/* Colour key in "Understanding the data" */
+.colour-key { margin-top: 18px; }
+.colour-key p { margin: 0 0 6px; font-size: 0.9rem; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+.colour-key .key-title { font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.sw { display: inline-block; width: 14px; height: 14px; border-radius: 3px; }
+.colour-key .sw:last-of-type { margin-right: 6px; }
+
+/* Three takeaways at the end */
+.takeaways {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  margin-top: 28px;
+}
+.takeaways p { margin: 0; }
+
 /* Bridge sentence leading into the next section */
 .bridge {
   max-width: 680px;
@@ -181,6 +206,21 @@ h3 {
 /* ---------- Vega charts ---------- */
 .chart-slot { min-width: 0; min-height: 220px; }
 .chart-tall { min-height: 320px; }
+
+/* Reserve each chart's height before it is drawn (charts draw as you scroll near them),
+   so the page doesn't jump when a chart appears. */
+#chart-map-1a          { min-height: 420px; }
+#chart-heatmap         { min-height: 430px; }
+#chart-dot-map         { min-height: 480px; }
+#chart-slope           { min-height: 420px; }
+#chart-housing-scatter { min-height: 420px; }
+#chart-category-rank   { min-height: 460px; }
+#chart-butterfly       { min-height: 420px; }
+#chart-income-spending { min-height: 390px; }
+#chart-pie-map-aus     { min-height: 690px; }
+#chart-age-bump        { min-height: 460px; }
+#chart-stress          { min-height: 370px; }
+#chart-map-rent        { min-height: 760px; }
 .row-pair .chart-slot, .fig-wide .chart-slot { width: 100%; }
 
 .vega-embed { width: 100%; }
@@ -245,7 +285,7 @@ h4 {
 
 /* ---------- Smaller screens: everything stacks into one column ---------- */
 @media (max-width: 1000px) {
-  .two-col, .row-pair, .row-side, .site-footer { grid-template-columns: 1fr; }
+  .two-col, .row-pair, .row-side, .site-footer, .story-cols, .takeaways { grid-template-columns: 1fr; }
   .row-pair .fig-head { min-height: 0; }
   .row-side .side-chart { overflow-x: auto; }
 }

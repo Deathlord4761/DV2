@@ -84,7 +84,7 @@ const spec_chart_housing_scatter = {
     // 2. Path joining the surveys in time order.
     {
       "data": HS_DATA,
-      "mark": { "type": "line", "color": "#2b7a78", "strokeWidth": 2.5, "point": false },
+      "mark": { "type": "line", "color": "#2f4b7c", "strokeWidth": 2.5, "point": false },
       "encoding": {
         "x": HS_X,
         "y": HS_Y,
@@ -102,7 +102,7 @@ const spec_chart_housing_scatter = {
         "color": {
           "field": "year_order",
           "type": "quantitative",
-          "scale": { "range": ["#9fc9c4", "#0f5c63"] },
+          "scale": { "range": ["#c3cee0", "#2f4b7c"] },
           "legend": null
         },
         "size": { "condition": { "param": "hs_hover", "empty": false, "value": 220 }, "value": 110 },
